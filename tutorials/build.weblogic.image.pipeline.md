@@ -39,6 +39,10 @@ Using the OCI console page click the user icon and select **User Settings**. On 
 
 ![alt text](images/ocir/001.user.settings.auth.token.png)
 
+If the **User Settings** is grade out, you can your user setting by selecting **User** under **Identity** from the sliding menu on the left and locate your user ID.
+
+![alt text](images/ocir/008.user.settings.auth.token.png)
+
 Enter a description which allows you to easily identify the allocated token later. For example if you want to revoke then you have to find the proper token to delete. For example *ocir*.
 
 ![alt text](images/ocir/002.generate.token.png)
@@ -116,14 +120,14 @@ If you want you can make your application public if you want to share the applic
 
 ![alt text](images/build.weblogic.pipeline/007.create.application.png)
 
-The repository already contains a necessary `wercker.yml` but before the execution provide the following key/value pairs:
+The repository already contains a necessary `wercker.yml` but before the execution provide the following key/value pairs as environment variables:
 
 | Key | Value | Note |
 |----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | OCI_REGISTRY_USERNAME | your_cloud_username |  The username what you note during user settings. e.g. oracleidentitycloudservice/john.p.smith@example.com |
 | OCI_REGISTRY_PASSWORD | OCIR Auth Token | The Auth Token you generated previously |
 | TENANCY | Name of your tenancy |
-| REGION | The code of your home region. See the [documentation](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) to get your region code. | e.g. `fra` - stands for *eu-frankfurt-1* |
+| REGION | The code of your home region. See the [documentation](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) to get your region code. | e.g. `fra` - stands for *eu-frankfurt-1* | `iad` for *us-ashburn-1*, `phx` for *us-phoenix-1* |
 | DOCKER_USERNAME | Your Docker Hub username | Necessary to pull official WebLogic Server image from Docker Store |
 | DOCKER_PASSWORD | Your Docker Hub password | Necessary to pull official WebLogic Server image from Docker Store |
 
@@ -172,3 +176,5 @@ In the registry you have to find a repository named like your Oracle Container P
 ![alt text](images/build.weblogic.pipeline/017.ocir.image.check.png)
 
 Now the WebLogic domain image is ready to deploy on Kubernetes using WebLogic Operator.
+
+**You are now ready to move to the next lab: [Lab 2](install.operator.md)**

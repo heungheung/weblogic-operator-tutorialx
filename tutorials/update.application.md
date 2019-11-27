@@ -66,3 +66,6 @@ During the rolling restart check your web application periodically. If the respo
 `http://EXTERNAL-IP/opdemo/?dsname=testDatasource`
 
 ![](images/update.application/004.check.changes.png)
+
+
+**You are now ready to move to the next lab: [Lab 8](node.selector.md)**

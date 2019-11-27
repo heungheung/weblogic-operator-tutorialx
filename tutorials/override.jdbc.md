@@ -167,3 +167,6 @@ Now check the expected values of the JDBC datasource using the demo Web Applicat
 You have to see the following changes:
 - **Database User**: scott2
 - **Database URL**: jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB
+
+
+**You are now ready to move to the next lab: [Lab 7](update.application.md)**

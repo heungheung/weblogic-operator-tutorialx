@@ -20,6 +20,14 @@ More information about OKE and custom cluster deployment:
 
 #### Open the OCI console ####
 
+If you have signed into your OCI console before, you can go straight to the [OCI console page](https://console.us-ashburn-1.oraclecloud.com/#/a/)
+
+  - Enter you Cloud Tenant and click **Continue**
+	- Click **Contune** to sign in with your SSO credentials
+
+
+#### Otherwise:
+
 Sign in using your Cloud Services link you got in email during the registration process. (If this is the first time you have to change the generated first time password.)
 
 ![alt text](images/oke/001.cloud.link.email.png)
@@ -83,7 +91,7 @@ The Create Virtual Cloud Network panel shows the network resources that will be 
 
 	- the name of the node pool (always pool1)
 	- the compartment in which the node pool will be created (always the same as the one in which the new network resources will reside)
-	- the version of Kubernetes that will run on each worker node in the node pool (always the same as the version specified for the master nodes) 
+	- the version of Kubernetes that will run on each worker node in the node pool (always the same as the version specified for the master nodes)
         - the image to use on each node in the node pool
 
 The Create Node Pool panel also contains some node pool properties that you can change.
@@ -199,9 +207,13 @@ The CLI setup now is done. To complete the `kubectl` configuration open the navi
 
 ![alt text](images/oke/014.back.to.cluster.details.png)
 
-Click **Access Kubeconfig**.
+Click **Access Kubernetes Dashboard** under **Resources** menu.
 
-![alt text](images/oke/015.access.kubeconfig.png)
+![alt text](images/oke/017.access.kubeconfig.png)
+
+Follow steps 1 to 9 to download the Kubeconfig file and the authentication token required for accessing the oke-admin service.
+
+In Step 1, click **Access Kubeconfig**
 
 A dialog pops up which contains the customized OCI command that you need to execute to create Kubernetes configuration file.
 
@@ -216,6 +228,7 @@ Note! For `kubectl` try to use by defult `$HOME/.kube/config` configuration file
 
 	export KUBECONFIG=another_folder_path/kubernetes_config_file_name
 
+
 Now check that `kubectl` is working, for example using the `get node` command:
 
 	$ kubectl get node
@@ -226,18 +239,7 @@ Now check that `kubectl` is working, for example using the `get node` command:
 
 If you see the node's information the configuration was successful. Probably the Name column will contain the IPs that are non-routable
 
-##### Set up the RBAC policy for the OKE cluster #####
-
-In order to have permission to access the Kubernetes cluster, you need to authorize your OCI account as a cluster-admin on the OCI Container Engine for Kubernetes cluster. This will require your user OCID, which you used to configure OCI CLI few steps above. (This information available on the OCI console page, under your user settings.)
-
-
-Then execute the role binding command using your(!) user OCID:
-
-	kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=<YOUR_USER_OCID>
-
-For example:
-
-	$ kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=ocid1.user.oc1..aaaaaaaa724gophmrcxxrzg3utunh3rg5ieeyyrwuqfetixdb3mhzesxmdbq
-	clusterrolebinding "my-cluster-admin-binding" created
 
 Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
+
+**You are now ready to move to the next lab: [Lab 1](build.weblogic.image.pipeline.md)**

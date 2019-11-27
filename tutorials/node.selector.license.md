@@ -84,3 +84,5 @@ $ kubectl apply -f /u01/domain.yaml
 domain.weblogic.oracle/sample-domain1 configured
 ```
 The pod reallocation/restart can happen based on the scheduler decision.
+
+**You have completed all labs: [Return Home](domain-home-in-image.md)**

@@ -19,7 +19,7 @@ To install the Traefik operator in the traefik namespace with the provided sampl
     --namespace traefik \
     --values kubernetes/samples/charts/traefik/values.yaml  \
     --set "kubernetes.namespaces={traefik}" \
-    --set "serviceType=LoadBalancer" 
+    --set "serviceType=LoadBalancer"
 
 The output should be similar:
 
@@ -112,3 +112,6 @@ For example:
 
     $ curl -H 'host: traefik.example.com' http://129.213.172.44
     <a href="/dashboard/">Found</a>.
+
+
+**You are now ready to move to the next lab: [Lab 4](deploy.weblogic.md)**
