@@ -34,7 +34,7 @@ bash <(curl -s https://raw.githubusercontent.com/nagypeter/vmcontrol/master/setu
 ```
 Close the terminal when the script has finished.
 
-You may now proceed to **Lab 0** below.
+You may now proceed to **[Lab 0: Setup Oracle Kubernetes Engine instance on Oracle Cloud Infrastructure](setup.oke.md)** below.
 
 ### The topics to be covered in this hands-on session are: ###
 

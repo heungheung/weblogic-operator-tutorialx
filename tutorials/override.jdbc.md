@@ -169,4 +169,4 @@ You have to see the following changes:
 - **Database URL**: jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB
 
 
-**You are now ready to move to the next lab: [Lab 7](update.application.md)**
+**You are now ready to move to the next lab: [Lab 7: Update Web Application](update.application.md)**

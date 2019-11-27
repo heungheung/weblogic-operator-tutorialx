@@ -242,4 +242,4 @@ If you see the node's information the configuration was successful. Probably the
 
 Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
 
-**You are now ready to move to the next lab: [Lab 1](build.weblogic.image.pipeline.md)**
+**You are now ready to move to the next lab: [Lab 1: Create Oracle Container Pipelines Application to Build Custom WebLogic Domain Image](build.weblogic.image.pipeline.md)**

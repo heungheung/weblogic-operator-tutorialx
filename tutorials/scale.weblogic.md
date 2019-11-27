@@ -54,4 +54,4 @@ Note! Do not use the console to scale the cluster. The operator controls this op
 
 ---
 
-**You are now ready to move to the next lab: [Lab 6](override.jdbc.md)**
+**You are now ready to move to the next lab: [Lab 6: Override JDBC Datasource parameters](override.jdbc.md)**

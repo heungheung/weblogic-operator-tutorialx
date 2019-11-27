@@ -114,4 +114,4 @@ For example:
     <a href="/dashboard/">Found</a>.
 
 
-**You are now ready to move to the next lab: [Lab 4](deploy.weblogic.md)**
+**You are now ready to move to the next lab: [Lab 4: Deploy WebLogic Domain](deploy.weblogic.md)**

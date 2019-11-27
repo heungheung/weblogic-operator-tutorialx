@@ -118,4 +118,4 @@ domain.weblogic.oracle/sample-domain1 configured
 The pod reallocation/restart can happen based on the scheduler decision.
 
 
-**You are now ready to move to the next lab: [Lab 9](node.selector.license.md)**
+**You are now ready to move to the next lab: [Lab 9: Assigning WebLogic Pods to Licensed Nodes](node.selector.license.md)**

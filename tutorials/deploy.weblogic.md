@@ -178,4 +178,4 @@ The URL pattern of the sample application is the following:
 Refresh the page and notice the hostname changes. It reflects the managed server's name which responds to the request. You should see the load balancing between the two managed servers.
 
 
-**You are now ready to move to the next lab: [Lab 5](scale.weblogic.md)**
+**You are now ready to move to the next lab: [Lab 5: Scaling WebLogic Cluster](scale.weblogic.md)**
