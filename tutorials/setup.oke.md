@@ -1,4 +1,4 @@
-# Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI) #
+# Lab 0: Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI) #
 
 Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your containerised applications to the cloud. Use Container Engine for Kubernetes (sometimes abbreviated to just OKE) when your development team wants to reliably build, deploy, and manage cloud-native applications. You specify the compute resources that your applications require, and Container Engine for Kubernetes provisions them on Oracle Cloud Infrastructure in an existing OCI tenancy.
 
@@ -22,9 +22,13 @@ More information about OKE and custom cluster deployment:
 
 If you have signed into your OCI console before, you can go straight to the [OCI console page](https://console.us-ashburn-1.oraclecloud.com/#/a/)
 
-  - Enter you Cloud Tenant and click **Continue**
-	- Click **Contune** to sign in with your SSO credentials
+  - Enter your Cloud Tenant and click **Continue**
 
+  ![alt text](images/oke/000.change.tenant.png)
+
+  - Click **Continue** in the left hand box to sign in with your SSO credentials
+
+  ![alt text](images/oke/000.oci.console.png)
 
 #### Otherwise:
 
@@ -32,7 +36,7 @@ Sign in using your Cloud Services link you got in email during the registration 
 
 ![alt text](images/oke/001.cloud.link.email.png)
 
-Use the username and the password distributed by the instructor. Click **Sign In**.
+Enter your username and password from your Trial Account sign up. Click **Sign In**.
 
 ![alt text](images/oke/002.login.png)
 
@@ -111,11 +115,11 @@ Click **Close** to return to the Console.
 
 #### Prepare OCI CLI to download Kubernetes configuration file ####
 
-When you create a cluster, you need to download a Kubernetes configuration file (commonly known as a `kubeconfig` file) for the cluster. To do so you have to add OCI API Signing key and configure OCI CLI on your workstation (Virtualbox environment).
+When you create a cluster, you need to download a Kubernetes configuration file (commonly known as a `kubeconfig` file) for the cluster. **To do so you have to add OCI API Signing key and configure OCI CLI on your workstation (Virtualbox environment)**.
 
-##### Configure OCI CLI #####
+#### Configure OCI CLI ####
 
-Before using the CLI, you have to create a config file that contains the required credentials for working with Oracle Cloud Infrastructure. To have this config the CLI walks you through the first-time setup process, step by step, use the oci setup config command. The command prompts you for the information required for the config file and the API public/private keys. The setup dialog generates an API key pair and creates the config file.
+Before using the CLI, you have to create a config file that contains the required credentials for working with Oracle Cloud Infrastructure. To have this config the CLI walks you through the first-time setup process, step by step, use the `oci setup config` command. The command prompts you for the information required for the config file and the API public/private keys. The setup dialog generates an API key pair and creates the config file.
 
 Before you start the setup collect the necessary information using your OCI console.
 
@@ -171,7 +175,9 @@ Enter your region. You can see in the console (browser) at the top right area. I
 
 	Enter a region (e.g. eu-frankfurt-1, uk-london-1, us-ashburn-1, us-phoenix-1): <YOUR_REGION>
 
-Generate new API signing key. For the location accept default. Don't use a passphrase for the private key.
+Generate new API signing key. For the location accept default.
+
+**Don't use a passphrase for the private key**. Just hit return for no passphrase.
 
 	Do you want to generate a new RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/N]: Y
 
@@ -195,11 +201,11 @@ Copy the content of the `oci_api_key_public.pem` file into the *PUBLIC KEY* text
 
 The key is uploaded and its fingerprint is displayed in the list.
 
-##### Configure kubectl #####
+#### Configuring kubectl ####
 
 ---
 
-Note: If you need to install `kubectl` then follow the [documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+Note: If you are using the VirtualBox image, then `kubectl` is already installed. Otherwise, if you need to install `kubectl` then follow the [documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 
 ---
 
@@ -207,13 +213,14 @@ The CLI setup now is done. To complete the `kubectl` configuration open the navi
 
 ![alt text](images/oke/014.back.to.cluster.details.png)
 
-Click **Access Kubernetes Dashboard** under **Resources** menu.
+Click **Access Kubernetes Dashboard** under **Resources** menu on the left.
 
 ![alt text](images/oke/017.access.kubeconfig.png)
 
-Follow steps 1 to 9 to download the Kubeconfig file and the authentication token required for accessing the oke-admin service.
 
-In Step 1, click **Access Kubeconfig**
+Follow **Steps 1 to 9** to download the Kubeconfig file and the authentication token required for accessing the oke-admin service.
+
+In **Step 1**, click **Access Kubeconfig**
 
 A dialog pops up which contains the customized OCI command that you need to execute to create Kubernetes configuration file.
 
@@ -239,6 +246,12 @@ Now check that `kubectl` is working, for example using the `get node` command:
 
 If you see the node's information the configuration was successful. Probably the Name column will contain the IPs that are non-routable
 
+Complete the configuration by following **Steps 2 to 9**.
+
+![alt text](images/oke/018.access.kubeconfig.part.1.png)
+![alt text](images/oke/018.access.kubeconfig.part.2.png)
+
+Once you have access to the Kubernetes Dashboard then you successfully configured `kubectl`.
 
 Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
 
