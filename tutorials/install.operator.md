@@ -1,6 +1,4 @@
-# Lab 2: Oracle WebLogic Operator Tutorial #
-
-## Install and configure Operator  ##
+# Lab 2: Install and configure Operator  #
 
 An operator is an application-specific controller that extends Kubernetes to create, configure, and manage instances of complex applications. The Oracle WebLogic Server Kubernetes Operator (the "operator") simplifies the management and operation of WebLogic domains and deployments.
 
