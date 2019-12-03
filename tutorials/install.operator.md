@@ -149,4 +149,4 @@ sample-weblogic-operator	1       	Mon Feb  4 19:10:56 2019	DEPLOYED	weblogic-ope
 The WebLogic Operator has been installed. You can continue with next tutorial module.
 
 
-##You are now ready to move to the next lab: [Lab 3: Install Traefik Software Loadbalancer](install.traefik.md)##
+## You are now ready to move to the next lab: [Lab 3: Install Traefik Software Loadbalancer](install.traefik.md) ##
