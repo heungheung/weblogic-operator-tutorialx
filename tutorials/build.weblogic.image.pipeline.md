@@ -205,4 +205,4 @@ In the registry you have to find a repository named like your Oracle Container P
 
 Now the WebLogic domain image is ready to deploy on Kubernetes using WebLogic Operator.
 
-### You are now ready to move to the next lab: [Lab 2: Install WebLogic Operator](install.operator.md)  ###
+### You are now ready to move to the next lab - [Lab 2: Install WebLogic Operator](install.operator.md)  ###

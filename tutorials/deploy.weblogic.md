@@ -1,8 +1,6 @@
-# Oracle WebLogic Operator Tutorial #
+# Lab 4: Deploy WebLogic domain  #
 
-### Deploy WebLogic domain  ###
-
-#### Preparing the Kubernetes cluster to run WebLogic domains ####
+## Preparing the Kubernetes cluster to run WebLogic domains ##
 
 Create the domain namespace:
 ```
@@ -42,7 +40,7 @@ $ kubectl create secret docker-registry ocirsecret \
   secret "ocirsecret" created
 ```
 
-#### Update Traefik loadbalancer and WebLogic Operator configuration ####
+## Update Traefik loadbalancer and WebLogic Operator configuration ##
 
 Once you have your domain namespace (WebLogic domain not yet deployed) you have to update loadbalancer's and operator's configuration about where the domain will be deployed.
 
@@ -71,7 +69,7 @@ helm upgrade \
 ```
 Please note the only updated parameter in both cases is the domain namespace.
 
-#### Deploy WebLogic domain on Kubernetes ####
+## Deploy WebLogic domain on Kubernetes ##
 
 To deploy WebLogic domain you need to create a domain resource definition which contains the necessary parameters for the operator to start the WebLogic domain properly.
 
@@ -167,7 +165,7 @@ Enter admin user credentials (weblogic/welcome1) and click **Login**
 
 !Please note in this use case the use of Administration Console is just for demo/test purposes because domain configuration persisted in pod which means after the restart the original values (baked into the image) will be used again. To override certain configuration parameters - to ensure image portability - follow the override part of this tutorial.
 
-#### Test the demo Web Application ####
+## Test the demo Web Application ##
 
 The URL pattern of the sample application is the following:
 
@@ -178,4 +176,4 @@ The URL pattern of the sample application is the following:
 Refresh the page and notice the hostname changes. It reflects the managed server's name which responds to the request. You should see the load balancing between the two managed servers.
 
 
-**You are now ready to move to the next lab: [Lab 5: Scaling WebLogic Cluster](scale.weblogic.md)**
+### You are now ready to move to the next lab - [Lab 5: Scaling WebLogic Cluster](scale.weblogic.md) ###

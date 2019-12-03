@@ -1,6 +1,6 @@
-# Oracle WebLogic Operator Tutorial #
+# Lab 7: Oracle WebLogic Operator Tutorial #
 
-### Application Lifecycle Management ###
+## Application Lifecycle Management ##
 
 This tutorial implements the Docker image with the WebLogic domain inside the image deployment. This means all the artefacts including the deployed applications, domain related files are stored within the image. This results new WebLogic Docker image every time when the application modified. In this - widely adopted - approach the image is the packaging unit instead of the Web/Enterprise Application Archive (*war*, *ear*).
 
@@ -8,7 +8,7 @@ The preconfigured *build-domain-in-home-image* pipeline you defined to build the
 
 Once the Oracle Pipelines application is ready and uploaded the new version of image you need to redeploy the new version of the image on Kubernetes. This can be done using [WebLogic Operator's server lifecycle management feature](https://github.com/oracle/weblogic-kubernetes-operator/blob/2.0/site/server-lifecycle.md). In this tutorial using operator you will initiate a domain restart when the new version of the image is available.
 
-#### Modify the Web Application  ####
+## Modify the Web Application  ##
 
 The easiest way to change the application to update the web application's main JSP directly in your github.com repository. Find the  
 https://github.com/YOUR_GITHUB_USERNAME/weblogic-operator-tutorial/blob/master/src/main/webapp/index.jsp file and click **Edit**
@@ -68,4 +68,4 @@ During the rolling restart check your web application periodically. If the respo
 ![](images/update.application/004.check.changes.png)
 
 
-**You are now ready to move to the next lab: [Lab 8: Assigning WebLogic Pods to Nodes](node.selector.md)**
+### You are now ready to move to the next lab - [Lab 8: Assigning WebLogic Pods to Nodes](node.selector.md) ###

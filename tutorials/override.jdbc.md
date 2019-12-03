@@ -1,6 +1,6 @@
-# Oracle WebLogic Operator Tutorial #
+# Lab 6: Oracle WebLogic Operator Tutorial #
 
-### Override domain configuration  ###
+## Override domain configuration  ##
 
 You can modify the WebLogic domain configuration for both the "domain in persistent volume" and the "domain in image" options before deploying a domain resource:
 
@@ -15,7 +15,7 @@ Overrides leverage a built-in WebLogic feature called "Configuration Overriding"
 
 For more details see the [Configuration overrides documentation](https://github.com/oracle/weblogic-kubernetes-operator/blob/2.0/site/config-overrides.md)
 
-#### Prepare JDBC override ####
+## Prepare JDBC override ##
 
 The operator requires a different file name format for override templates. For JDBC it has to be `jdbc-MODULENAME.xml`. A MODULENAME must correspond to the MBean name of a system resource defined in your original `config.xml` file.
 
@@ -169,4 +169,4 @@ You have to see the following changes:
 - **Database URL**: jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB
 
 
-**You are now ready to move to the next lab: [Lab 7: Update Web Application](update.application.md)**
+### You are now ready to move to the next lab - [Lab 7: Update Web Application](update.application.md) ###

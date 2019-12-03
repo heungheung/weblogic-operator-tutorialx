@@ -1,6 +1,6 @@
-# Oracle WebLogic Operator Tutorial #
+# Lab 9: Oracle WebLogic Operator Tutorial #
 
-### Assigning WebLogic Pods to Licensed Node ###
+## Assigning WebLogic Pods to Licensed Node ##
 
 This use case similar to described in [Assigning WebLogic Pods to Nodes lab](node.selector.md) where individual servers/pods were asssigned to specific node(s). However the focus in this use case on the license coverage.
 
@@ -8,7 +8,7 @@ At v1.13, Kubernetes supports clusters with up to 5000(!) nodes. However certain
 
 In this lab you will learn how to assign all WebLogic pods (WebLogic domain) to particular node(s).
 
-#### Assign WebLogic servers/pods to licensed nodes #####
+## Assign WebLogic servers/pods to licensed nodes ##
 
 To assign pod(s) to node(s) you need to label the desired node with custom tag. Then define the `nodeSelector` property in the domain resource definition and set the value of the label you applied on the node. Finally apply the domain configuration changes.
 
@@ -35,7 +35,7 @@ sample-domain1-managed-server3   1/1       Running   0          1m        10.244
 
 As you can see from the result Kubernetes evenly deployed the 3 managed servers to the 3 worker nodes. In this scenario choose one of the node where you want to move all pods.
 
-###### Labelling ######
+## Labelling ##
 
 In this example the licensed node will be: `130.61.84.41`
 
@@ -44,7 +44,7 @@ Label this node. The label can be any string, but now use `licensed-for-weblogic
 $ kubectl label nodes 130.61.84.41 licensed-for-weblogic=true
 node/130.61.84.41 labeled
 ```
-###### Modify domain resource definition ######
+## Modify domain resource definition ##
 
 Open your `domain.yaml` in text editor and find the `serverPod:` entry and insert a new property inside:
 ```
@@ -71,7 +71,7 @@ sample-domain1-managed-server2   1/1       Running   0          4h        10.244
 sample-domain1-managed-server3   1/1       Running   0          4h        10.244.2.41   130.61.84.41   <none>
 ```
 
-##### Delete label and `nodeSelector` entries in `domain.yaml` #####
+## Delete label and `nodeSelector` entries in `domain.yaml` ##
 
 To delete the node assignment delete the node's label using `kubectl label node <nodename> <labelname>-` command but replace the node name properly:
 ```
@@ -85,4 +85,4 @@ domain.weblogic.oracle/sample-domain1 configured
 ```
 The pod reallocation/restart can happen based on the scheduler decision.
 
-**You have completed all labs: [Return Home](domain-home-in-image.md)**
+### You have completed all labs - [Return Home](domain-home-in-image.md) ###

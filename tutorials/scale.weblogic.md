@@ -1,6 +1,6 @@
-# Oracle WebLogic Operator Tutorial #
+# Lab 5: Oracle WebLogic Operator Tutorial #
 
-### Scaling WebLogic cluster  ###
+## Scaling WebLogic cluster  ##
 
 WebLogic Server supports two types of clustering configurations, configured and dynamic. Configured clusters are created by manually configuring each individual Managed Server instance. In dynamic clusters, the Managed Server configurations are generated from a single, shared template.  With dynamic clusters, when additional server capacity is needed, new server instances can be added to the cluster without having to manually configure them individually. Also, unlike configured clusters, scaling up of dynamic clusters is not restricted to the set of servers defined in the cluster but can be increased based on runtime demands.
 
@@ -11,7 +11,7 @@ The operator provides several ways to initiate scaling of WebLogic clusters, inc
 - Using a WLDF policy rule and script action to call the operator's REST scale API.
 - Using a Prometheus alert action to call the operator's REST scale API.
 
-#### Scaling WebLogic cluster using `kubectl`  ####
+## Scaling WebLogic cluster using `kubectl`  ##
 
 The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the replicas property within a domain resource.  To retain changes edit the *domain.yaml* and apply changes using `kubectl`. Use your favourite editor to open *domain.yaml*.
 
@@ -54,4 +54,4 @@ Note! Do not use the console to scale the cluster. The operator controls this op
 
 ---
 
-**You are now ready to move to the next lab: [Lab 6: Override JDBC Datasource parameters](override.jdbc.md)**
+### You are now ready to move to the next lab - [Lab 6: Override JDBC Datasource parameters](override.jdbc.md) ##$
