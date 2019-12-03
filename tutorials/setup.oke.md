@@ -18,7 +18,7 @@ More information about OKE and custom cluster deployment:
 
 - [Oracle Container Engine documentation](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm)
 
-#### Open the OCI console ####
+### Open the OCI console ###
 
 If you have signed into your OCI console before, you can go straight to the [OCI console page](https://console.us-ashburn-1.oraclecloud.com/#/a/)
 
@@ -30,7 +30,7 @@ If you have signed into your OCI console before, you can go straight to the [OCI
 
   ![alt text](images/oke/000.oci.console.png)
 
-#### Otherwise:
+### Otherwise:
 
 Sign in using your Cloud Services link you got in email during the registration process. (If this is the first time you have to change the generated first time password.)
 
@@ -46,7 +46,7 @@ Click the menu icon at the top left corner and select **Compute** on the left sl
 
 You have to land on the OCI console page.
 
-#### Create Policy ####
+### Create Policy ###
 
 A service policy allows OKE to create resources in tenancy such as compute. An OKE resource policy or policies enables you to regulate which groups in your tenancy can do what with the OKE API.
 
@@ -72,7 +72,7 @@ Click **Create**.
 
 ![alt text](images/oke/006.create.oke.policy.png)
 
-#### Create OKE (Oracle Container Engine for Kubernetes) cluster ####
+### Create OKE (Oracle Container Engine for Kubernetes) cluster ###
 
 *Quick Create* feature uses default settings to create a *quick cluster* with new network resources as required. This approach is the fastest way to create a new cluster. If you accept all the default values, you can create a new cluster in just a few clicks. New network resources for the cluster are created automatically, along with a node pool and three worker nodes.
 
@@ -113,11 +113,11 @@ Click **Create** to create the new network resources and the new cluster.
 
 Click **Close** to return to the Console.
 
-#### Prepare OCI CLI to download Kubernetes configuration file ####
+### Prepare OCI CLI to download Kubernetes configuration file ###
 
 When you create a cluster, you need to download a Kubernetes configuration file (commonly known as a `kubeconfig` file) for the cluster. **To do so you have to add OCI API Signing key and configure OCI CLI on your workstation (Virtualbox environment)**.
 
-#### Configure OCI CLI ####
+### Configure OCI CLI ###
 
 Before using the CLI, you have to create a config file that contains the required credentials for working with Oracle Cloud Infrastructure. To have this config the CLI walks you through the first-time setup process, step by step, use the `oci setup config` command. The command prompts you for the information required for the config file and the API public/private keys. The setup dialog generates an API key pair and creates the config file.
 
@@ -189,7 +189,7 @@ Generate new API signing key. For the location accept default.
 	Fingerprint: 41:ea:cf:23:01:a2:bb:fb:84:79:34:8e:fe:bc:18:4f
 	Config written to /home/oracle/.oci/config
 
-##### Upload the public key of the API signing key pair #####
+#### Upload the public key of the API signing key pair ####
 
 The final step to complete the CLI setup to upload your freshly generated public key through the console. The public key if you haven't changed it during setup can be found in the `/home/oracle/.oci/` directory and it's name `oci_api_key_public.pem`. Using your favourite way copy its content to the clipboard. While viewing user details click **Add Public Key**.
 
@@ -201,7 +201,7 @@ Copy the content of the `oci_api_key_public.pem` file into the *PUBLIC KEY* text
 
 The key is uploaded and its fingerprint is displayed in the list.
 
-#### Configuring kubectl ####
+### Configuring kubectl ###
 
 ---
 
