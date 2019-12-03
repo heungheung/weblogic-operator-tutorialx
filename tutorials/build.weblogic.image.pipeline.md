@@ -119,7 +119,7 @@ Enter your GitHub Username and Password. **Click Sign in**
 
 First create your Oracle Container Pipelines application. Oracle Container Pipelines acts as continuous integration tool which will produce WebLogic container image and uploads to Oracle Container Registry.
 
-The following pipelines are predefined in the Oracle Container Pipelines configuration file ([wercker.yml](https://github.com/nagypeter/weblogic-operator-tutorial/blob/master/wercker.yml)):
+The following pipelines are predefined in the Oracle Container Pipelines configuration file ([wercker.yml](https://github.com/kwanwan/weblogic-operator-tutorial/blob/master/wercker.yml)):
 
 - **build**: Default and mandatory pipeline to start the workflow. It builds the demo Web Application using Maven.
 - **build-domain-in-home-image**: Pipeline which runs Docker build to create custom WebLogic container image. First time when no *latest* image available in repository it uses official WebLogic image from Docker Store as base image and runs WLST script to customise the image. Also copies the demo Web Application into the image and deploys using WLST. Once *latest* (tag) of the image is available in the repository then the workflow just builds the Web Application and update the *latest* image with the new application binaries. After the Docker build the pipeline produces a new image and pushes to the image repository. Thus every time when changes happen in the sources and committed to Github. The image tag will be the commit hash tag of the source changes  which triggered the new build process. Also the historically latest gets the *latest* tag as well.
