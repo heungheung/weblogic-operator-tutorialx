@@ -205,7 +205,7 @@ The key is uploaded and its fingerprint is displayed in the list.
 
 ---
 
-Note: If you are using the VirtualBox image, then `kubectl` is already installed. Otherwise, if you need to install `kubectl` then follow the [documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+**Note**: If you are using the VirtualBox image, then `kubectl` is already installed. Otherwise, if you need to install `kubectl` then follow the [documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 
 ---
 
