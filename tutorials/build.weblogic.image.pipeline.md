@@ -1,4 +1,4 @@
-# Build WebLogic container image using Oracle Container Pipelines (Wercker) #
+# Lab 1: Build WebLogic container image using Oracle Container Pipelines (Wercker) #
 
 **Oracle Container Pipelines (Wercker)** is a Docker-Native CI/CD  Automation platform for Kubernetes & Microservice Deployments. Wercker is integrated with Docker containers, which package up application code and can be easily moved from server to server. Each build artifact can be a Docker container. The user can take the container from the Docker Hub or his private registry and build the code before shipping it. Its SaaS platform enables developers to test and deploy code often. They can push software updates incrementally as they are ready, rather than in bundled dumps. It makes it easier for coders to practice continuous integration, a software engineering practice in which each change a developer makes to the codebase is constantly tested in the process so that software doesn’t break when it goes live.
 
@@ -27,7 +27,7 @@ The key components of Oracle Container Pipelines:
 
 ---
 
-#### Prepare Oracle Container Registry access ####
+### Prepare Oracle Container Registry access ###
 
 Before you create your build pipeline you need to get your Oracle Container Registry token. Token acts as password to container registry provided by Oracle Cloud Infrastructure.
 
@@ -47,7 +47,9 @@ Enter a description which allows you to easily identify the allocated token late
 
 ![alt text](images/ocir/002.generate.token.png)
 
-Now **copy and store(!)** your generated token for later usage. Click **Close**.
+Now **copy and store(!)** your generated token for later usage. You won't be able to retrieve this token again if you don't save it.
+
+Click **Close**.
 
 ![alt text](images/ocir/003.copy.token.png)
 
@@ -55,9 +57,9 @@ Since you are on the User details page please note the proper user name for late
 
 ![alt text](images/build.weblogic.pipeline/000.username.png)
 
-#### Accept Licence Agreement to use `store/oracle/weblogic:12.2.1.3` image from Docker Store ####
+### Accept Licence Agreement to use `store/oracle/weblogic:12.2.1.3` image from Docker Store ###
 
-If you have not used the base image [`store/oracle/weblogic:12.2.1.3`](https://store.docker.com/images/oracle-weblogic-server-12c) before, you will need to visit the [Docker Store web interface](https://store.docker.com/images/oracle-weblogic-server-12c) and accept the license agreement before the Docker Store will give you permission to pull that image.
+The Oracle WebLogic base image is stored in Docker Hub. If you have not used the base image [`store/oracle/weblogic:12.2.1.3`](https://store.docker.com/images/oracle-weblogic-server-12c) before, you will need to visit the [Docker Store web interface](https://store.docker.com/images/oracle-weblogic-server-12c) and accept the license agreement before the Docker Store will give you permission to pull that image.
 
 Open [https://store.docker.com/images/oracle-weblogic-server-12c](https://store.docker.com/images/oracle-weblogic-server-12c) in a new browser and click **Log In**.
 
@@ -75,21 +77,45 @@ Complete your contact information and accept agreements. Click **Get Content**.
 
 ![alt text](images/docker/04.docker.store.weblogic.get.content.png)
 
-Now you are ready to pull the  image on Docker enabled host after authenticating yourself in Docker Hub using your Docker Hub credentials.
+Now you are ready to pull the image on Docker enabled host after authenticating yourself in Docker Hub using your Docker Hub credentials.
 
 ![alt text](images/docker/05.docker.store.weblogic.png)
 
-#### Import WebLogic Operator Tutorial's source repository into your Github repository ####
+### Import WebLogic Operator Tutorial's source repository into your Github repository ###
 
 In this step you will fork the tutorial's source repository. The source repository contains the demo application deployed on top of WebLogic server, configuration yaml to quickly create Oracle Container Pipelines(CI/CD) application to build custom WebLogic image and few additional Kubernetes configuration files to deploy the custom WebLogic image.
 
-Open the *https://github.com/nagypeter/weblogic-operator-tutorial.git* repository in your browser. Click the **Fork** button at the left top area. Sign in to github.com if necessary.
+If you do not have a Github account then you need to sign up now.
+
+Go to https://github.com
+
+Enter your preferred username, password and email. **Click Sign up for GitHub**
+
+![alt text](images/build.weblogic.pipeline/001.github.signup.png)
+
+**Otherwise**
+
+Open the *https://github.com/kwanwan/weblogic-operator-tutorial* repository in your browser. Click the **Fork** button at the left top area. Sign in to github.com if necessary.
 
 ![alt text](images/build.weblogic.pipeline/001.fork.repository.png)
 
 Wait until the fork process is complete.
 
-#### Create Oracle Container Pipelines Application to build custom WebLogic Docker container including demo application ####
+### Create Oracle Container Pipelines Application to build custom WebLogic Docker container including demo application ###
+
+If you do not have a Container Pipeline account then you need to sign up now.
+
+Go to https://app.wercker.com
+
+There are several ways to sign up a Container Pipeline account. **Click LOG IN WITH GITHUB** to sign in using your GitHub credentials.
+
+![alt text](images/build.weblogic.pipeline/002.wercker.signup.part1.png)
+
+Enter your GitHub Username and Password. **Click Sign in**
+
+![alt text](images/build.weblogic.pipeline/002.wercker.signup.part2.png)
+
+**Otherwise**
 
 First create your Oracle Container Pipelines application. Oracle Container Pipelines acts as continuous integration tool which will produce WebLogic container image and uploads to Oracle Container Registry.
 
@@ -124,14 +150,16 @@ The repository already contains a necessary `wercker.yml` but before the executi
 
 | Key | Value | Note |
 |----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OCI_REGISTRY_USERNAME | your_cloud_username |  The username what you note during user settings. e.g. oracleidentitycloudservice/john.p.smith@example.com |
+| OCI_REGISTRY_USERNAME | your_cloud_username |  The username you took note of in user settings. e.g. oracleidentitycloudservice/john.p.smith@example.com |
 | OCI_REGISTRY_PASSWORD | OCIR Auth Token | The Auth Token you generated previously |
 | TENANCY | Name of your tenancy |
-| REGION | The code of your home region. See the [documentation](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) to get your region code. | e.g. `fra` - stands for *eu-frankfurt-1* | `iad` for *us-ashburn-1*, `phx` for *us-phoenix-1* |
+| REGION | The code of your home region. See the [documentation](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) to get your region code. | e.g. `fra` - stands for *eu-frankfurt-1*, `iad` for *us-ashburn-1*, `phx` for *us-phoenix-1* |
 | DOCKER_USERNAME | Your Docker Hub username | Necessary to pull official WebLogic Server image from Docker Store |
 | DOCKER_PASSWORD | Your Docker Hub password | Necessary to pull official WebLogic Server image from Docker Store |
 
 To define these variables click **<>Environment** tab and enter keys and values. Remember that these values will be visible to anyone to whom you give access to the Oracle Container Pipelines application, therefore select **Protected** for any values that should remain hidden, including all passwords.
+
+Make sure you click **Add** after completing every Key Value pair to save your settings.
 
 ![alt text](images/build.weblogic.pipeline/008.env.variables.png)
 

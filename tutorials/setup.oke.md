@@ -251,7 +251,7 @@ Complete the configuration by following **Steps 2 to 9**.
 ![alt text](images/oke/018.access.kubeconfig.part.1.png)
 ![alt text](images/oke/018.access.kubeconfig.part.2.png)
 
-Once you have access to the Kubernetes Dashboard then you successfully configured `kubectl`.
+Once you have access to the Kubernetes Dashboard then you have successfully configured `kubectl`.
 
 Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
 
