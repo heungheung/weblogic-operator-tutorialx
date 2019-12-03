@@ -18,7 +18,7 @@ The key components of Oracle Container Pipelines:
 + **Workflows** are a set of chained and branched pipelines that allow you to form multi-stage, multi-branch complex CI/CD flows that take your project from code to production.
 + All pipelines execute inside a **Docker container** and every build artefact can be a Docker container.
 
-### Prerequisites ###
+## Prerequisites ##
 
 - [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
 - [Docker](https://hub.docker.com/) account.
@@ -27,7 +27,7 @@ The key components of Oracle Container Pipelines:
 
 ---
 
-### Prepare Oracle Container Registry access ###
+## Prepare Oracle Container Registry access ##
 
 Before you create your build pipeline you need to get your Oracle Container Registry token. Token acts as password to container registry provided by Oracle Cloud Infrastructure.
 
@@ -57,7 +57,7 @@ Since you are on the User details page please note the proper user name for late
 
 ![alt text](images/build.weblogic.pipeline/000.username.png)
 
-### Accept Licence Agreement to use `store/oracle/weblogic:12.2.1.3` image from Docker Store ###
+## Accept Licence Agreement to use `store/oracle/weblogic:12.2.1.3` image from Docker Store ##
 
 The Oracle WebLogic base image is stored in Docker Hub. If you have not used the base image [`store/oracle/weblogic:12.2.1.3`](https://store.docker.com/images/oracle-weblogic-server-12c) before, you will need to visit the [Docker Store web interface](https://store.docker.com/images/oracle-weblogic-server-12c) and accept the license agreement before the Docker Store will give you permission to pull that image.
 
@@ -81,7 +81,7 @@ Now you are ready to pull the image on Docker enabled host after authenticating 
 
 ![alt text](images/docker/05.docker.store.weblogic.png)
 
-### Import WebLogic Operator Tutorial's source repository into your Github repository ###
+## Import WebLogic Operator Tutorial's source repository into your Github repository ##
 
 In this step you will fork the tutorial's source repository. The source repository contains the demo application deployed on top of WebLogic server, configuration yaml to quickly create Oracle Container Pipelines(CI/CD) application to build custom WebLogic image and few additional Kubernetes configuration files to deploy the custom WebLogic image.
 
@@ -101,7 +101,7 @@ Open the *https://github.com/kwanwan/weblogic-operator-tutorial* repository in y
 
 Wait until the fork process is complete.
 
-### Create Oracle Container Pipelines Application to build custom WebLogic Docker container including demo application ###
+## Create Oracle Container Pipelines Application to build custom WebLogic Docker container including demo application ##
 
 If you do not have a Container Pipeline account then you need to sign up now.
 
