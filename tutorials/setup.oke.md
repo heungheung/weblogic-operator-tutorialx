@@ -189,7 +189,7 @@ Generate new API signing key. For the location accept default.
 	Fingerprint: 41:ea:cf:23:01:a2:bb:fb:84:79:34:8e:fe:bc:18:4f
 	Config written to /home/oracle/.oci/config
 
-#### Upload the public key of the API signing key pair ####
+### Upload the public key of the API signing key pair ###
 
 The final step to complete the CLI setup to upload your freshly generated public key through the console. The public key if you haven't changed it during setup can be found in the `/home/oracle/.oci/` directory and it's name `oci_api_key_public.pem`. Using your favourite way copy its content to the clipboard. While viewing user details click **Add Public Key**.
 
