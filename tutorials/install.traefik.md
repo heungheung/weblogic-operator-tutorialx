@@ -96,6 +96,10 @@ $ kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk
 129.213.172.44
 ```
 
+You may also verify the Public IP address by going to the Kubernetes Dashboard.
+
+![alt text](images/traefik/001.k8s.dashboard.png)
+
 Verify the `helm` charts:
 
     $ helm list
