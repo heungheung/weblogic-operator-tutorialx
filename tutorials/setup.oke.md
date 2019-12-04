@@ -115,7 +115,7 @@ Click **Close** to return to the Console.
 
 ## Prepare OCI CLI to download Kubernetes configuration file ##
 
-When you create a cluster, you need to download a Kubernetes configuration file (commonly known as a `kubeconfig` file) for the cluster. **To do so you have to add OCI API Signing key and configure OCI CLI on your workstation (Virtualbox environment)**.
+When you create a cluster, you need to download a Kubernetes configuration file (commonly known as a `kubeconfig` file) for the cluster. **To do so you have to add OCI API Signing key and configure OCI CLI on your workstation (Virtualbox environment or Remote Compute VM environment)**.
 
 ## Configure OCI CLI ##
 
@@ -133,17 +133,21 @@ In the Console click on your OCI user name and select User Settings. On the user
 
 To identify *tenancy OCID* in the Console, open the navigation menu. Under *Governance and Administration*, go to *Administration* and click **Tenancy Details**. Click **Copy** to get tenancy OCID on clipboard. Paste to your text editor for OCI CLI configuration.
 
+As for the region, you can find this along the top of the console. It can Frankfurt, London, Ashburn, or Phoenix.
+
 ![alt text](images/oke/011.tenancy.ocid.png)
 
 Leave the console open during CLI configuration and copy the required information from the console page or from text editor where you collected the OCIDs (user and tenancy). When you want to accept the default value what is offered in square bracket just hit Enter.
 
 ---
 
-Note: If you need to install OCI CLI then follow the [documentation](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm).
+Note: If you need to install OCI CLI on your laptop natively then follow the [documentation](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm).
+
+Otherwise OCI CLI is installed in the VirtualBox environment or in the Remote Compute VM environment.
 
 ---
 
-Execute oci setup config command to setup the CLI:
+Execute `oci setup config` command to setup the CLI:
 
 	$ oci setup config
 	    This command provides a walkthrough of creating a valid CLI config file.
@@ -166,7 +170,7 @@ Execute oci setup config command to setup the CLI:
 
 	Enter a location for your config [/home/oracle/.oci/config]:
 
-Enter to accept default directory location. Provide your user and tenancy OCIDs.
+Enter to accept default directory location `/home/oracle/.oci/config`. Provide your user and tenancy OCIDs.
 
 	Enter a user OCID: <YOUR_USER_OCID>
 	Enter a tenancy OCID: <YOUR_TENANCY_OCID>
