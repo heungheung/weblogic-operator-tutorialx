@@ -179,7 +179,7 @@ Enter your region. You can see in the console (browser) at the top right area. I
 
 	Enter a region (e.g. eu-frankfurt-1, uk-london-1, us-ashburn-1, us-phoenix-1): <YOUR_REGION>
 
-Generate new API signing key. For the location accept default.
+Generate new API signing key by entering `Y` at the prompt. For the location accept default.
 
 **Don't use a passphrase for the private key**. Just hit return for no passphrase.
 

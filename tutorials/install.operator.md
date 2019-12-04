@@ -5,7 +5,7 @@ An operator is an application-specific controller that extends Kubernetes to cre
 ## Install the Operator operator with a Helm chart ##
 
 ---
-Note! If you don't use the prepared VirtualBox desktop environment first clone the WebLogic Operator git repository to your desktop.
+Note! If you don't use the prepared VirtualBox desktop environment, you will need to first clone the WebLogic Operator git repository to your desktop.
 ```
 git clone https://github.com/oracle/weblogic-kubernetes-operator.git  -b 2.0
 ```
@@ -143,6 +143,10 @@ $ helm list sample-weblogic-operator
 NAME                    	REVISION	UPDATED                 	STATUS  	CHART              	NAMESPACE                  
 sample-weblogic-operator	1       	Mon Feb  4 19:10:56 2019	DEPLOYED	weblogic-operator-2	sample-weblogic-operator-ns
 ```
+
+You may also check the Operator status by looking in the Kubernetes dashboard.
+
+![alt text](images/operator/000.k8s.dashboard.png)
 
 The WebLogic Operator has been installed. You can continue with next tutorial module.
 
