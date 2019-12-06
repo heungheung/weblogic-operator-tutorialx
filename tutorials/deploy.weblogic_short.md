@@ -1,8 +1,6 @@
-# Oracle WebLogic Operator Tutorial #
+# Lab 4: Deploy WebLogic domain  #
 
-### Deploy WebLogic domain  ###
-
-#### Preparing the Kubernetes cluster to run WebLogic domains ####
+## Preparing the Kubernetes cluster to run WebLogic domains ##
 
 Create the domain namespace:
 ```
@@ -14,6 +12,11 @@ kubectl -n sample-domain1-ns create secret generic sample-domain1-weblogic-crede
   --from-literal=username=weblogic \
   --from-literal=password=welcome1
 ```
+
+You can see the created secret in the Kubernetes Dashboard.
+
+![](images/deploy.domain/001.secrets.png)
+
 Label the secret with domainUID:
 ```
 kubectl label secret sample-domain1-weblogic-credentials \
@@ -22,7 +25,7 @@ kubectl label secret sample-domain1-weblogic-credentials \
   weblogic.domainName=sample-domain1
 ```
 
-#### Update Traefik loadbalancer and WebLogic Operator configuration ####
+## Update Traefik loadbalancer and WebLogic Operator configuration ##
 
 Once you have your domain namespace (WebLogic domain not yet deployed) you have to update loadbalancer's and operator's configuration about where the domain will be deployed.
 
@@ -51,17 +54,17 @@ helm upgrade \
 ```
 Please note the only updated parameter in both cases is the domain namespace.
 
-#### Deploy WebLogic domain on Kubernetes ####
+## Deploy WebLogic domain on Kubernetes ##
 
 To deploy WebLogic domain you need to create a domain resource definition which contains the necessary parameters for the operator to start the WebLogic domain properly.
 
-We provided for you domain.yaml file that contains yaml representation of the custom resoirce object. Please copy it locally
+We provided for you domain.yaml file that contains yaml representation of the custom resource object. Please copy it locally
 ```
 curl -LSs https://raw.githubusercontent.com/nagypeter/weblogic-operator-tutorial/master/k8s/domain_short.yaml >/u01/domain.yaml
 ```
-Please review it with your favorite editor.
+Please review it with your favourite editor.
 
-Cerate Domain custom resource object by applying the following command:
+Create Domain custom resource object by applying the following command:
 ```
 kubectl apply -f /u01/domain.yaml
 ```
@@ -80,6 +83,10 @@ sample-domain1-managed-server1   1/1       Running   0          1m        10.244
 sample-domain1-managed-server2   0/1       Running   0          1m        10.244.1.4    130.61.52.240   <none>
 ```
 You have to see three running pods similar to the result above. If you don't see all the running pods please wait and check periodically. The whole domain deployment may take up to 2-3 minutes depending on the compute shapes.
+
+You can also see these pods shown as running in the Kubernetes Dashboard.
+
+![](images/deploy.domain/003.labels.png)
 
 In order to access any application or admin console deployed on WebLogic you have to configure *Traefik* ingress. OCI Load balancer is already assigned during *Traefik* install in the previous step.
 
@@ -131,7 +138,7 @@ Enter admin user credentials (weblogic/welcome1) and click **Login**
 
 !Please note in this use case the use of Administration Console is just for demo/test purposes because domain configuration persisted in pod which means after the restart the original values (baked into the image) will be used again. To override certain configuration parameters - to ensure image portability - follow the override part of this tutorial.
 
-#### Test the demo Web Application ####
+## Test the demo Web Application ##
 
 The URL pattern of the sample application is the following:
 
@@ -140,3 +147,6 @@ The URL pattern of the sample application is the following:
 ![](images/deploy.domain/webapp.png)
 
 Refresh the page and notice the hostname changes. It reflects the managed server's name which responds to the request. You should see the load balancing between the two managed servers.
+
+
+### You are now ready to move to the next lab - [Lab 5: Scaling WebLogic Cluster](scale.weblogic.md) ###

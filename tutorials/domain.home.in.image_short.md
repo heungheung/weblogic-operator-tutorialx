@@ -43,7 +43,7 @@ To setup the client VM in Oracle Cloud please  then follow this [tutorial](setup
 
 ### The topics to be covered in this hands-on session are: ###
 
-1. [Setup Oracle Kubernetes Engine instance on Oracle Cloud Infrastructure.](setup.oke.md)
+1. [Setup Oracle Kubernetes Engine instance on Oracle Cloud Infrastructure](setup.oke.md)
 2. [Install WebLogic Operator](install.operator.md)
 3. [Install Traefik Software Loadbalancer](install.traefik.md)
 4. [Deploy WebLogic Domain](deploy.weblogic_short.md)
