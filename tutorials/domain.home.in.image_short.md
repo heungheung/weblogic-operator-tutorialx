@@ -22,7 +22,7 @@ This tutorial has been tested on Oracle Cloud Infrastructure Container Engine fo
 
 ### Prerequisites ###
 
-We recommend to run the client software (kubectl, git, helm) in of two environments: either inside Virtual Box on local machine or in the OCI Compute VM in the Oracle Cloud. 
+We recommend to run the client software (kubectl, git, helm) in one of two environments: either inside Virtual Box on local machine or in the OCI Compute VM in the Oracle Cloud.
 
 #### Option 1: Running client in Virtual Box ####
 

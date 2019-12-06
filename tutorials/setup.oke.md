@@ -1,4 +1,4 @@
-# Lab 0: Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI) #
+# Lab 1: Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI) #
 
 Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your containerised applications to the cloud. Use Container Engine for Kubernetes (sometimes abbreviated to just OKE) when your development team wants to reliably build, deploy, and manage cloud-native applications. You specify the compute resources that your applications require, and Container Engine for Kubernetes provisions them on Oracle Cloud Infrastructure in an existing OCI tenancy.
 
@@ -259,4 +259,5 @@ Once you have access to the Kubernetes Dashboard then you have successfully conf
 
 Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
 
-### You are now ready to move to the next lab - [Lab 1: Create Oracle Container Pipelines Application to Build Custom WebLogic Domain Image](build.weblogic.image.pipeline.md) ###
+
+### You are now ready to move to the next lab - [Lab 2: Install WebLogic Operator](install.operator.md)  ###

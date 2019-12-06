@@ -125,6 +125,10 @@ sample-domain1-managed-server2   0/1       Running   0          1m        10.244
 ```
 You have to see three running pods similar to the result above. If you don't see all the running pods please wait and check periodically. The whole domain deployment may take up to 2-3 minutes depending on the compute shapes.
 
+You can also see these pods shown as running in the Kubernetes Dashboard.
+
+![](images/deploy.domain/003.labels.png)
+
 In order to access any application or admin console deployed on WebLogic you have to configure *Traefik* ingress. OCI Load balancer is already assigned during *Traefik* install in the previous step.
 
 As a simple solution the best is to configure path routing which will route the external traffic through *Traefik* to domain cluster address or admin server's console.
