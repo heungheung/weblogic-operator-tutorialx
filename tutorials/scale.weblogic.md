@@ -33,6 +33,12 @@ sample-domain1-managed-server1   1/1       Running       0          56m
 sample-domain1-managed-server2   1/1       Running       0          55m
 sample-domain1-managed-server3   1/1       Running       0          1m
 ```
+
+You can also check the managed server scaling action in the Kubernetes Dashboard.
+
+![alt text](images/scaling/001.check.on.k8s.dashboard.png)
+
+
 Soon the managed server 3 will appear and will be ready within a few minutes. You can also check the managed server scaling action using the WebLogic Administration console:
 
 ![alt text](images/scaling/check.on.console.png)
