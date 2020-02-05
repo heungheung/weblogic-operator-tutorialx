@@ -12,7 +12,6 @@ kubectl -n sample-domain1-ns create secret generic sample-domain1-weblogic-crede
   --from-literal=username=weblogic \
   --from-literal=password=welcome1
 ```
-<<<<<<< HEAD
 
 You can see the created secret in the Kubernetes Dashboard.
 
@@ -25,8 +24,6 @@ kubectl label secret sample-domain1-weblogic-credentials \
   weblogic.domainUID=sample-domain1 \
   weblogic.domainName=sample-domain1
 ```
-=======
->>>>>>> b1599703503c2e8256c19c0303442c2074f5d40c
 
 ## Update Traefik loadbalancer and WebLogic Operator configuration ##
 

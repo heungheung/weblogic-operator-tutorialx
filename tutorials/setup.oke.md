@@ -84,38 +84,47 @@ On the Cluster List page, click **Create Cluster**.
 
 ![alt text](images/oke/008.create.cluster.png)
 
-Specify the following configuration details:
+In the Create Cluster Solution dialog, select Quick Create and click Launch Workflow.
 
-- **Name**: The name of the new cluster. For example the default *cluster1*
-- **Kubernetes Version**: The Kubernetes version that runs on the master nodes and worker nodes of the cluster. Select the latest version.
-- Select **Quick Create** to create a new cluster with default settings, along with new network resources for the new cluster.
-The Create Virtual Cloud Network panel shows the network resources that will be created for you by default, namely a VCN, two load balancer subnets, and three worker node subnets.
+![alt text](images/oke/009.quick.1.png)
 
-	The Create Node Pool panel shows the fixed properties of the first node pool in the cluster that will be created for you:
+Select Quick Create to create a new cluster with default settings, along with new network resources for the new cluster. The Create Virtual Cloud Network panel shows the network resources that will be created for you by default, namely a VCN, two load balancer subnets, and three worker node subnets.
 
-	- the name of the node pool (always pool1)
-	- the compartment in which the node pool will be created (always the same as the one in which the new network resources will reside)
-	- the version of Kubernetes that will run on each worker node in the node pool (always the same as the version specified for the master nodes)
-        - the image to use on each node in the node pool
 
-The Create Node Pool panel also contains some node pool properties that you can change.
-- **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by Container Engine for Kubernetes. Select the available *VM.Standard2.1*
-- **Quantity per Subnet**: The number of worker nodes to create for the node pool in each subnet. Set *1*
-- **Public SSH Key**: Leave this field empty (screenshot contains some key - but for simplicity leave this empty)
-- **Kubernetes Dashboard Enabled**: leave the default true.
-- **Tiller (Helm) Enabled**: leave the default true.
+Specify the following configuration details on Cluster Creation page:
 
-Click **Create** to create the new network resources and the new cluster.
+- **Name**: The name of the cluster. Leave the default value.
+- **Compartment**: The name of the compartment. Leave the default value.
+- **Kubernetes version**: The version of the Kubernetes. Leave the default value.
+- **Choose Visibility Type**: Is the cluster going to be routable or not. Leave the default value.
+- **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by Container Engine for Kubernetes. Select the available VM.Standard2.1
+- **Number of nodes**: The number of worker nodes to create. Leave the default value 3
+- **Kubernetes Dashboard Enabled**: Change the default true and make it ENABLED.
+- **Tiller (Helm) Enabled**: Change the default true and make it ENABLED.
 
-![alt text](images/oke/009.quick.part.1.png)
-![alt text](images/oke/009.quick.part.2.png)
-![alt text](images/oke/009.quick.part.3.png)
+Click **Next** to review the details you entered for the new cluster.
 
-Click **Close** to return to the Console.
+![alt text](images/oke/009.quick.details.1.png)
+![alt text](images/oke/009.quick.details.2.png)
+
+On the Review page, click **Submit** to create the new network resources and the new cluster.
+
+![alt text](images/oke/009.quick.review.1.png)
+![alt text](images/oke/009.quick.review.2.png)
+![alt text](images/oke/009.quick.review.3.png)
+
+
+You see the different network resources being created for you.
+
+![alt text](images/oke/009.quick.submitted.png)
+
+Click **Close** and the new cluster is shown on the *Cluster Details* page. When it has been created, the new cluster has a status of *Active*.
+
+
 
 ## Prepare OCI CLI to download Kubernetes configuration file ##
 
-When you create a cluster, you need to download a Kubernetes configuration file (commonly known as a `kubeconfig` file) for the cluster. **To do so you have to add OCI API Signing key and configure OCI CLI on your workstation (Virtualbox environment or Remote Compute VM environment)**.
+When you create a cluster, you need to download a Kubernetes configuration file (commonly known as a `kubeconfig` file) for the cluster. **To do so you have to add OCI API Signing key and configure OCI CLI on your workstation (Remote Compute VM environment)**.
 
 ## Configure OCI CLI ##
 
@@ -143,7 +152,7 @@ Leave the console open during CLI configuration and copy the required informatio
 
 Note: If you need to install OCI CLI on your laptop natively then follow the [documentation](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm).
 
-Otherwise OCI CLI is installed in the VirtualBox environment or in the Remote Compute VM environment.
+Otherwise OCI CLI is installed by default in the Remote Compute VM environment.
 
 ---
 

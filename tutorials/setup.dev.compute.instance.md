@@ -131,7 +131,7 @@ Warning: Permanently added '129.213.52.177' (ECDSA) to the list of known hosts.
 
 Once you have connected to the compute VM run a single remote script to setup the necessary tools:
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/nagypeter/vmcontrol/master/setup-operator-workshop.sh)
+bash <(curl -s https://gitlab.com/heungheung/wlsoprvm/-/raw/master/setup-operator-workshop.sh)
 ```
 
 When the script finished your compute VM is ready to use for the workshop.
