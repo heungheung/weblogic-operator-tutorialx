@@ -35,6 +35,6 @@ The following labs require an Oracle Public Cloud account. You may use your own 
  5. [Deploy WebLogic Domain](deploy.weblogic_short.md)
  6. [Scaling WebLogic Cluster](scale.weblogic.md)
  7. [Override JDBC Datasource parameters](override.jdbc.md)
- 8. [Updating deployed application by rolling restart to the new image](update.application_short.md)
+ 8. [Updating Deployed Application by Rolling Restart to the New Image](update.application_short.md)
  9. [Assigning WebLogic Pods to Nodes (scenario simulating cluster spanning 2 data center)](node.selector.md)
  10. [Assigning WebLogic Pods to Licensed Nodes (scenario simulating licensing only the subset of the cluster)](node.selector.license.md)
