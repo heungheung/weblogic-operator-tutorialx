@@ -1,4 +1,4 @@
-# Lab 2: Install and configure Operator  #
+# Lab 3: Install and configure Operator  #
 
 An operator is an application-specific controller that extends Kubernetes to create, configure, and manage instances of complex applications. The Oracle WebLogic Server Kubernetes Operator (the "operator") simplifies the management and operation of WebLogic domains and deployments.
 
@@ -151,4 +151,4 @@ You may also check the Operator status by looking in the Kubernetes dashboard.
 The WebLogic Operator has been installed. You can continue with next tutorial module.
 
 
-### You are now ready to move to the next lab - [Lab 3: Install Traefik Software Loadbalancer](install.traefik.md) ###
+### You are now ready to move to the next lab - [Lab 4: Install Traefik Software Loadbalancer](install.traefik.md) ###

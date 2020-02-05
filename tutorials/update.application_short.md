@@ -1,4 +1,4 @@
-# Lab 7: Application Lifecycle Management #
+# Lab 8: Application Lifecycle Management #
 
 This tutorial implements the Docker image with the WebLogic domain inside the image deployment. This means all the artefacts including the deployed applications, domain related files are stored within the image. This results new WebLogic Docker image every time when the application modified. In this - widely adopted - approach the image is the packaging unit instead of the Web/Enterprise Application Archive (*war*, *ear*).
 
@@ -35,4 +35,4 @@ During the rolling restart check your web application periodically. If the respo
 ![](images/update.application/004.check.changes.png)
 
 
-### You are now ready to move to the next lab - [Lab 8: Assigning WebLogic Pods to Nodes](node.selector.md) ###
+### You are now ready to move to the next lab - [Lab 9: Assigning WebLogic Pods to Nodes](node.selector.md) ###

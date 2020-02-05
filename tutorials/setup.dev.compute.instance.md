@@ -1,4 +1,4 @@
-# Create Developer Compute VM on Oracle Cloud Infrastructure #
+# Lab 2: Create Developer Compute VM on Oracle Cloud Infrastructure #
 
 To complete the tutorial you need to have certain tools to be installed. To simplify the environment prerequisites we provide Virtualbox image including all the necessary tools.
 However in few cases Windows version and/or corporate policies, settings doesn't allow to run Virtualbox on your computer.
@@ -135,3 +135,5 @@ bash <(curl -s https://gitlab.com/heungheung/wlsoprvm/-/raw/master/setup-operato
 ```
 
 When the script finished your compute VM is ready to use for the workshop.
+
+### You are now ready to move to the next lab - [Lab 3: Install WebLogic Operator](install.operator.md)  ###

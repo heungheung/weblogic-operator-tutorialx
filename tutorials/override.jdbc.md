@@ -1,4 +1,4 @@
-# Lab 6: Override domain configuration  #
+# Lab 7: Override domain configuration  #
 
 You can modify the WebLogic domain configuration for both the "domain in persistent volume" and the "domain in image" options before deploying a domain resource:
 
@@ -167,4 +167,4 @@ You have to see the following changes:
 - **Database URL**: jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB
 
 
-### You are now ready to move to the next lab - [Lab 7: Update Web Application](update.application_short.md) ###
+### You are now ready to move to the next lab - [Lab 8: Update Web Application](update.application_short.md) ###

@@ -269,4 +269,4 @@ Once you have access to the Kubernetes Dashboard then you have successfully conf
 Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
 
 
-### You are now ready to move to the next lab - [Lab 2: Install WebLogic Operator](install.operator.md)  ###
+### You are now ready to move to the next lab - [Lab 2: Create Developer Compute VM on Oracle Cloud Infrastructure](setup.dev.compute.instance.md)  ###

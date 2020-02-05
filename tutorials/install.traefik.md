@@ -1,4 +1,4 @@
-# Lab 3: Install and configure Traefik  #
+# Lab 4: Install and configure Traefik  #
 
 The Oracle WebLogic Server Kubernetes Operator supports three load balancers: Traefik, Voyager, and Apache. Samples are provided in the [documentation](https://github.com/oracle/weblogic-kubernetes-operator/blob/2.0/kubernetes/samples/charts/README.md).
 
@@ -116,4 +116,4 @@ For example:
     <a href="/dashboard/">Found</a>.
 
 
-### You are now ready to move to the next lab - [Lab 4: Deploy WebLogic Domain](deploy.weblogic_short.md) ###
+### You are now ready to move to the next lab - [Lab 5: Deploy WebLogic Domain](deploy.weblogic_short.md) ###
