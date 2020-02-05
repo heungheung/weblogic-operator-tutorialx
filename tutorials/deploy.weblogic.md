@@ -13,6 +13,7 @@ kubectl -n sample-domain1-ns create secret generic sample-domain1-weblogic-crede
   --from-literal=password=welcome1
 ```
 
+<<<<<<< HEAD
 You can see the created secret in the Kubernetes Dashboard.
 
 ![](images/deploy.domain/001.secrets.png)
@@ -30,6 +31,9 @@ You can see the labels for your secret in the Kubernetes Dashboard and you can a
 ![](images/deploy.domain/002.labels.png)
 
 Create OCI image Registry secret to allow Kubernetes to pull your custom WebLogic image. Replace the registry server region code, username and auth token respectively.
+=======
+Create OCI image Registry secret to allow Kubernetes to pull you custome WebLogic image. Replace the registry server region code, username and auth token respectively.
+>>>>>>> b1599703503c2e8256c19c0303442c2074f5d40c
 WARNING!!! - be careful about username - docker-username parameter should have a value of YOUR_TENACY_NAME/YOUR_OCIR_USERNAME - don't skip YOUR_TENANCY_NAME please.
 ```
 kubectl create secret docker-registry ocirsecret \
