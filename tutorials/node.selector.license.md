@@ -83,4 +83,4 @@ domain.weblogic.oracle/sample-domain1 configured
 ```
 The pod reallocation/restart can happen based on the scheduler decision.
 
-### You have completed all labs - [Return Home](domain-home-in-image_short.md) ###
+### You have completed all labs - [Return Home](domain.home.in.image_short.md) ###
