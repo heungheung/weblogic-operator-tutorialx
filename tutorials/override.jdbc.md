@@ -1,4 +1,4 @@
-# Lab 7: Override domain configuration  #
+# Lab 8: Override domain configuration  #
 
 You can modify the WebLogic domain configuration for both the "domain in persistent volume" and the "domain in image" options before deploying a domain resource:
 

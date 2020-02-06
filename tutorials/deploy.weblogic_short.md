@@ -1,4 +1,4 @@
-# Lab 5: Deploy WebLogic domain  #
+# Lab 6: Deploy WebLogic domain  #
 
 ## Preparing the Kubernetes cluster to run WebLogic domains ##
 
