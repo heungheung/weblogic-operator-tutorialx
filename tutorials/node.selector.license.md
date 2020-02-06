@@ -83,4 +83,4 @@ domain.weblogic.oracle/sample-domain1 configured
 ```
 The pod reallocation/restart can happen based on the scheduler decision.
 
-### You have completed all labs - [Return Home](domain.home.in.image_short.md) ###
+## You are now ready to move to the next lab - [Lab 12: Setup Kubernetes Dashboard Access (Optional)](setup.kube.dashboard.md) ###

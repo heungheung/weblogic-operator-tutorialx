@@ -116,4 +116,4 @@ For example:
     <a href="/dashboard/">Found</a>.
 
 
-### You are now ready to move to the next lab - [Lab 5: Deploy WebLogic Domain](deploy.weblogic_short.md) ###
+### You are now ready to move to the next lab - [Lab 6: Deploy WebLogic Domain](deploy.weblogic_short.md) ###

@@ -35,4 +35,4 @@ During the rolling restart check your web application periodically. If the respo
 ![](images/update.application/004.check.changes.png)
 
 
-### You are now ready to move to the next lab - [Lab 9: Assigning WebLogic Pods to Nodes](node.selector.md) ###
+### You are now ready to move to the next lab - [Lab 10: Assigning WebLogic Pods to Nodes](node.selector.md) ###

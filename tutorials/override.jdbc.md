@@ -167,4 +167,4 @@ You have to see the following changes:
 - **Database URL**: jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB
 
 
-### You are now ready to move to the next lab - [Lab 8: Updating deployed application by rolling restart to the new image](update.application_short.md) ###
+### You are now ready to move to the next lab - [Lab 9: Updating deployed application by rolling restart to the new image](update.application_short.md) ###

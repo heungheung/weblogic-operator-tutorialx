@@ -151,4 +151,4 @@ You may also check the Operator status by looking in the Kubernetes dashboard.
 The WebLogic Operator has been installed. You can continue with next tutorial module.
 
 
-### You are now ready to move to the next lab - [Lab 4: Install Traefik Software Loadbalancer](install.traefik.md) ###
+### You are now ready to move to the next lab - [Lab 5: Install Traefik Software Loadbalancer](install.traefik.md) ###

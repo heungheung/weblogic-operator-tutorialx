@@ -58,4 +58,4 @@ Note! Do not use the console to scale the cluster. The operator controls this op
 
 ---
 
-### You are now ready to move to the next lab - [Lab 7: Override JDBC Datasource parameters](override.jdbc.md) ###
+### You are now ready to move to the next lab - [Lab 8: Override JDBC Datasource parameters](override.jdbc.md) ###
