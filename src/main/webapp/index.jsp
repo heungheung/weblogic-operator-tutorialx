@@ -24,7 +24,7 @@ import="javax.naming.*"
 	<h1>WebLogic Operator Demo App - MBean properties:</h1><br>
 	<%
 	  // database connections variables
-	  InitialContext ctx;
+
     DataSource ds;
     Connection conn;
     Statement st;
