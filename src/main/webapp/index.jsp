@@ -93,7 +93,7 @@ import="javax.naming.*"
 						message.append("</td><td>" + proddesc + "</td></tr>");
 					}
 					st.close();
-					message.append("</table>")
+					message.append("</table>");
 				} catch (Exception e) {
 					out.println("Database error - Exception : " + e.getMessage() + "");
 				}
