@@ -46,6 +46,31 @@ Click the menu icon at the top left corner and select **Compute** on the left sl
 
 You have to land on the OCI console page.
 
+
+## Create a Compartment For Your OKE (Oracle Container Engine for Kubernetes) cluster ##
+
+Compartments are used to isolate resources within your OCI tenant. Role-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
+
+Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Identity** section of the menu, click **Compartments**
+
+![](images/oke/004.oci.console.1.png)
+
+Click **Create Compartment** to create a compartment.
+
+![](images/oke/004.oci.compartment.png)
+
+
+Enter the following:
+
+- **Name:** A unique name for your compartment. This must not be already used in your current tenancy.
+- **Description:** A friendly description.
+- **Parent Compartment:** Ensure the `root` compartment is selected (it will have the same name as your Oracle Cloud Account).
+
+Click **Create Compartment**.
+
+  ![](images/oke/004.oci.compartment.details.png)
+
+
 ## Create Policy ##
 
 A service policy allows OKE to create resources in tenancy such as compute. An OKE resource policy or policies enables you to regulate which groups in your tenancy can do what with the OKE API.
