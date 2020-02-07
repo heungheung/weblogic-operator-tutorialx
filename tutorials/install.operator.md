@@ -144,10 +144,6 @@ NAME                    	REVISION	UPDATED                 	STATUS  	CHART       
 sample-weblogic-operator	1       	Mon Feb  4 19:10:56 2019	DEPLOYED	weblogic-operator-2	sample-weblogic-operator-ns
 ```
 
-You may also check the Operator status by looking in the Kubernetes dashboard.
-
-![alt text](images/operator/000.k8s.dashboard.png)
-
 The WebLogic Operator has been installed. You can continue with next tutorial module.
 
 

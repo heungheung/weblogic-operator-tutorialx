@@ -13,18 +13,6 @@ kubectl -n sample-domain1-ns create secret generic sample-domain1-weblogic-crede
   --from-literal=password=welcome1
 ```
 
-You can see the created secret in the Kubernetes Dashboard.
-
-![](images/deploy.domain/001.secrets.png)
-
-Label the secret with domainUID:
-```
-kubectl label secret sample-domain1-weblogic-credentials \
-  -n sample-domain1-ns \
-  weblogic.domainUID=sample-domain1 \
-  weblogic.domainName=sample-domain1
-```
-
 ## Update Traefik loadbalancer and WebLogic Operator configuration ##
 
 Once you have your domain namespace (WebLogic domain not yet deployed) you have to update loadbalancer's and operator's configuration about where the domain will be deployed.
@@ -83,10 +71,6 @@ sample-domain1-managed-server1   1/1       Running   0          1m        10.244
 sample-domain1-managed-server2   0/1       Running   0          1m        10.244.1.4    130.61.52.240   <none>
 ```
 You have to see three running pods similar to the result above. If you don't see all the running pods please wait and check periodically. The whole domain deployment may take up to 2-3 minutes depending on the compute shapes.
-
-You can also see these pods shown as running in the Kubernetes Dashboard.
-
-![](images/deploy.domain/003.labels.png)
 
 In order to access any application or admin console deployed on WebLogic you have to configure *Traefik* ingress. OCI Load balancer is already assigned during *Traefik* install in the previous step.
 
