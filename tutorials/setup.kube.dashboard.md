@@ -29,21 +29,21 @@ On your OCI Console, open the navigation menu and under **Developer Services**, 
 
 Click **Access Kubernetes Dashboard** under **Resources** menu on the left.
 
-**Step 1** You do not need to do download the Kubeconfig file again as you have already downloaded this previously during the configuration of the **kubectl** command-line tool.
+**Step 1:** You do not need to do download the Kubeconfig file again as you have already downloaded this previously during the configuration of the **kubectl** command-line tool.
 
-**Steps 2** Create a file `oke-admin-service-account.yaml` by copying and pasting the content.
+**Steps 2:** Create a file `oke-admin-service-account.yaml` by copying and pasting the content.
 
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.2.png)
 
-**Step 3** Run the following **kubectl** command in your Developer Compute VM.
+**Step 3:** Run the following **kubectl** command in your Developer Compute VM.
 
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.3.png)
 
-**Step 4 & 5** Obtain an authentication token by running the **kubectl** command in your Developer Compute VM and copy the token from the command output.
+**Step 4 & 5:** Obtain an authentication token by running the **kubectl** command in your Developer Compute VM and copy the token from the command output.
 
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.4.png)
 
-**Step 6** Start your Kubernetes proxy in your Developer Compute VM so that you can access the Kubernetes Dashboard.
+**Step 6:** Start your Kubernetes proxy in your Developer Compute VM so that you can access the Kubernetes Dashboard.
 
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.6.png)
 
@@ -77,7 +77,9 @@ Then click “Open” to connect to your Developer Compute VM. Login as usual. N
 
 ![alt text](images/kube.dashboard/019.putty.tunnel.part.3.png)
 
-**Step 7** Open a browser and go to:
+## Connect to Kubernetes Dashboard ##
+
+**Step 7:** Open a browser and go to:
 
     http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
 
@@ -85,7 +87,7 @@ Then click “Open” to connect to your Developer Compute VM. Login as usual. N
 
 You should be able to see the Kubernetes Dashboard login page served by the Kubernetes Proxy running in you Developer Compute VM.
 
-**Step 8 & 9** Sign into the Kubernetes Dashboard with your token.
+**Step 8 & 9:** Sign into the Kubernetes Dashboard with your token.
 
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.8.png)
 
