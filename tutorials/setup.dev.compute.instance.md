@@ -65,7 +65,10 @@ Specify the remaining configuration details:
 - **Virtual cloud network compartment**: Leave your default.
 - **Virtual cloud network**: Most likely the default is the VCN what you created in the previous step. If not then select what you just created above.
 - **Subnet compartment**: Leave your default.
-- **Subnet**: Make sure the public(!) subnet e.g.:*Public Subnet-xxx (Regional)* is selected.
+- **Subnet**: Make sure the Public Subnet e.g.:*Public Subnet-xxx (Regional)* is selected.
+
+  ![alt text](images/compute.instance/012.5.compute.details.png)
+
 - **Assign a public IP address**: select this option to allow external access (`ssh`) to your compute VM.
 - **Add SSH key**: select the previously created `~/.ssh/myDeveloperComputeKey.pub` or copy and paste its content to the *SSH key* field.
 
