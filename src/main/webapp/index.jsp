@@ -79,7 +79,7 @@ import="javax.naming.*"
 				// pull data from db
 				try {
 					ctx = new InitialContext();
-					ds = (DataSource) ctx.lookup(jdbcDataSourceName);
+					ds = (DataSource) ctx.lookup("jdbc/" + jdbcDataSourceName);
 					conn = ds.getConnection();
 					st = conn.createStatement();
 					rs = st.executeQuery("SELECT * FROM PRODUCT");
