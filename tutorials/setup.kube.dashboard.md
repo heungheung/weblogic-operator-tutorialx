@@ -30,6 +30,7 @@ On your OCI Console, open the navigation menu and under **Developer Services**, 
 Click **Access Kubernetes Dashboard** under **Resources** menu on the left.
 
 **Step 1** You do not need to do download the Kubeconfig file again as you have already downloaded this previously during the configuration of the **kubectl** command-line tool.
+
 **Steps 2** Create a file `oke-admin-service-account.yaml` by copying and pasting the content.
 
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.2.png)
@@ -83,6 +84,10 @@ Then click “Open” to connect to your Developer Compute VM. Login as usual. N
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.7.png)
 
 You should be able to see the Kubernetes Dashboard login page served by the Kubernetes Proxy running in you Developer Compute VM.
+
+**Step 8 & 9** Sign into the Kubernetes Dashboard with your token.
+
+![alt text](images/kube.dashboard/018.access.kubeconfig.part.8.png)
 
 Select **Token** and paste the token you copied from **Step 5** into the token field.
 
