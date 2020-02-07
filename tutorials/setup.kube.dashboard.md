@@ -16,31 +16,85 @@ To config the Kubernetes Dashboard for controlling Kubernetes clusters the follo
 - a provisioned Oracle Container Engine for Kubernetes (OKE) cluster
 - a provisioned Developer Compute VM on OCI
 - a configured **kubectl** command-line tool
+- a PuTTY session
 
 
 
 
 ## Configuring Kubernetes Dashboard ##
 
-On you OCI Console, open the navigation menu and under **Developer Services**, click **Clusters**. Select your cluster and click to get the detail page.
+On your OCI Console, open the navigation menu and under **Developer Services**, click **Clusters**. Select your cluster and click to get the detail page.
 
 ![alt text](images/oke/014.back.to.cluster.details.png)
 
 Click **Access Kubernetes Dashboard** under **Resources** menu on the left.
 
-You do not need to do download the Kubeconfig file again in **Step 1** as you have already downloaded this previously during the configuration of the **kubectl** command-line tool.
+**Step 1** You do not need to do download the Kubeconfig file again as you have already downloaded this previously during the configuration of the **kubectl** command-line tool.
+**Steps 2** Create a file `oke-admin-service-account.yaml` by copying and pasting the content.
 
-Complete the configuration by following **Steps 2 to 9**. Please run the commands in your Developer Compute VM.
-
-In order to access the Kubernetes Dashboard in **Step 7**, you will need to setup a SSL Tunnel to your Developer Compute VM because the **kubectl proxy** is running in your Vm and your Browser is running locally on your laptop.
-
-![alt text](images/kube.dashboard/018.access.kubeconfig.part.1.png)
 ![alt text](images/kube.dashboard/018.access.kubeconfig.part.2.png)
 
+**Step 3** Run the following **kubectl** command in your Developer Compute VM.
+
+![alt text](images/kube.dashboard/018.access.kubeconfig.part.3.png)
+
+**Step 4 & 5** Obtain an authentication token by running the **kubectl** command in your Developer Compute VM and copy the token from the command output.
+
+![alt text](images/kube.dashboard/018.access.kubeconfig.part.4.png)
+
+**Step 6** Start your Kubernetes proxy in your Developer Compute VM so that you can access the Kubernetes Dashboard.
+
+![alt text](images/kube.dashboard/018.access.kubeconfig.part.6.png)
+
+In order to access the Kubernetes Dashboard in **Step 7**, you will need to setup a SSL Tunnel to your Developer Compute VM because the **kubectl proxy** is running in your VM and your Browser is running locally on your laptop.
 
 
+## Configuring a SSL Tunnel with PuTTY ##
 
-Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
+This is assuming you are using a Windows environment and you have already configured a PuTTY session to your Developer Compute VM in a previous lab.
+
+Open PuTTY and load your saved session.
+
+Select **Tunnels** from the *Category* options on the left hand pane.
+
+Enter the following values to forward the local port 8001 to the remote Developer Compute VM:
+
+- **Source port:** `8001`
+- **Destination:** `127.0.0.1:8001`
+
+Click **Add**
+
+![alt text](images/kube.dashboard/019.putty.tunnel.part.1.png)
+
+The forwarded port will now appear in the box above.
+
+![alt text](images/kube.dashboard/019.putty.tunnel.part.2.png)
+
+Make sure you save your changes to your session before you connect to this session.
+
+Then click “Open” to connect to your Developer Compute VM. Login as usual. Now, as long as you leave that SSH terminal window open, all traffic to the Source Port on your localhost will be forwarded on to the Destination.
+
+![alt text](images/kube.dashboard/019.putty.tunnel.part.3.png)
+
+**Step 7** Open a browser and go to:
+
+    http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
+
+![alt text](images/kube.dashboard/018.access.kubeconfig.part.7.png)
+
+You should be able to see the Kubernetes Dashboard login page served by the Kubernetes Proxy running in you Developer Compute VM.
+
+Select **Token** and paste the token you copied from **Step 5** into the token field.
+
+Click **Sign In**
+
+![alt text](images/kube.dashboard/20.kube.dashboard.login.png)
+
+If you token is correct, then you should be logged into the Kubernetes Dashboard.
+
+![alt text](images/kube.dashboard/20.kube.dashboard.png)
+
+Congratulation, you have successully configured access to your Kubernetes Dashboard for managing your Kubernetes cluster.
 
 
 ### You have completed all labs - [Return Home](domain.home.in.image_short.md) ###
