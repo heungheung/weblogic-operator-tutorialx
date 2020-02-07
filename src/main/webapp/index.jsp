@@ -7,14 +7,30 @@ import="javax.servlet.ServletException"
 import="javax.servlet.http.HttpServlet"
 import="javax.servlet.http.HttpServletRequest"
 import="javax.servlet.http.HttpServletResponse"
-import="java.net.InetAddress"%>
+import="java.net.InetAddress"
+import="java.sql.*"
+import="oracle.jdbc.driver.*"
+import="oracle.sql.*"
+import="oracle.jdbc.driver.OracleDriver"
+import="javax.sql.*"
+import="java.io.*"
+import="javax.naming.*"
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <body>
-	<h1><font color="green">WebLogic Operator Demo App - MBean properties:</font></h1><br>
+	<h1>WebLogic Operator Demo App - MBean properties:</h1><br>
 	<%
+	  // database connections variables
+	  InitialContext ctx;
+    DataSource ds;
+    Connection conn;
+    Statement st;
+    ResultSet rs;
+		String prodname,prodimage,proddesc;
+
 		String jdbcDataSourceName = request.getParameter("dsname");
 		StringBuffer message = new StringBuffer();
 		message.append("<b>Server time:</b> " + new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime()));
@@ -60,6 +76,28 @@ import="java.net.InetAddress"%>
 				}
 				message.append("<b>Database URL:</b> " + URL);
 				message.append("</p>");
+				// pull data from db
+				try {
+					ctx = new InitialContext();
+					ds = (DataSource) ctx.lookup("jdbc/" + jdbcDataSourceName);
+					conn = ds.getConnection();
+					st = conn.createStatement();
+					rs = st.executeQuery("SELECT * FROM PRODUCT");
+					// loop the products
+					message.append("<table>");
+					while(rs.next()) {
+						prodname = rs.getString("PRODUCTNAME");
+						prodimage = rs.getString("PRODUCTIMAGE");
+						proddesc = rs.getString("PRODUCTDESC");
+						message.append("<tr><td>" + prodname + "</td><td>" + prodimage );
+						message.append("</td><td>" + proddesc + "</td></tr>");
+					}
+					st.close();
+					message.append("</table>")
+				} catch (Exception e) {
+					out.println("Database error - Exception : " + e.getMessage() + "");
+				}
+
 			} catch (Exception e) {
 				e.printStackTrace();
 				message.append("<b>Error:</b> " + e.getClass().getName() + " - " + e.getLocalizedMessage());
