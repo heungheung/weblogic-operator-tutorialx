@@ -82,7 +82,7 @@ import="javax.naming.*"
 					ds = (DataSource) ctx.lookup("jdbc/" + jdbcDataSourceName);
 					conn = ds.getConnection();
 					st = conn.createStatement();
-					rs = st.executeQuery("SELECT * FROM PRODUCT");
+					rs = st.executeQuery("SELECT * FROM LOYALTY.PRODUCT");
 					// loop the products
 					message.append("<table>");
 					while(rs.next()) {
