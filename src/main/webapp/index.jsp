@@ -84,7 +84,7 @@ import="javax.naming.*"
 					st = conn.createStatement();
 					rs = st.executeQuery("SELECT * FROM LOYALTY.PRODUCT");
 					// loop the products
-					message.append("<table>");
+					message.append("<table border=1 cellpadding=2 cellspacing=2>");
 					while(rs.next()) {
 						prodname = rs.getString("PRODUCTNAME");
 						prodimage = rs.getString("PRODUCTIMAGE");
