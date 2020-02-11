@@ -13,9 +13,6 @@ kubectl -n sample-domain1-ns create secret generic sample-domain1-weblogic-crede
   --from-literal=password=welcome1
 ```
 
-You can see the created secret in the Kubernetes Dashboard.
-
-![](images/deploy.domain/001.secrets.png)
 
 Label the secret with domainUID:
 ```

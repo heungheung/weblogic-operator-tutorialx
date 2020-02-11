@@ -42,7 +42,7 @@ Leave the console open during CLI configuration and copy the required informatio
 
 ---
 
-Note: If you need to install OCI CLI on your laptop natively then follow the [documentation](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm).
+**Note**: If you need to install OCI CLI on your laptop natively then follow the [documentation](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm).
 
 Otherwise OCI CLI is installed by default in the Developer Compute VM environment.
 
@@ -132,7 +132,7 @@ Copy and execute the commands on your desktop where OCI CLI was configured. For 
 	$ mkdir -p $HOME/.kube
 	$ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.eu-frankfurt-1.aaaaaaaaaezwenlfgm4gkmzxha2tamtcgjqwmoldmu3tcnlfgc2tcyzzmrqw --file $HOME/.kube/config --region eu-frankfurt-1
 
-Note! For `kubectl` try to use by defult `$HOME/.kube/config` configuration file. If you save it to a different location and use different filename, don't forget to set the `KUBECONFIG`  variable to the configuration file. E.g.:
+**Note**: For `kubectl` try to use by defult `$HOME/.kube/config` configuration file. If you save it to a different location and use different filename, don't forget to set the `KUBECONFIG`  variable to the configuration file. E.g.:
 
 	export KUBECONFIG=another_folder_path/kubernetes_config_file_name
 

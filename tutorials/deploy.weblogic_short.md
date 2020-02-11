@@ -48,7 +48,7 @@ To deploy WebLogic domain you need to create a domain resource definition which 
 
 We provided for you domain.yaml file that contains yaml representation of the custom resource object. Please copy it locally
 ```
-curl -LSs https://raw.githubusercontent.com/nagypeter/weblogic-operator-tutorial/master/k8s/domain_short.yaml >/u01/domain.yaml
+curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/master/k8s/domain_short_apac.yaml >/u01/domain.yaml
 ```
 Please review it with your favourite editor.
 
@@ -131,6 +131,8 @@ The URL pattern of the sample application is the following:
 ![](images/deploy.domain/webapp.png)
 
 Refresh the page and notice the hostname changes. It reflects the managed server's name which responds to the request. You should see the load balancing between the two managed servers.
+
+You can ignore the database error as the datasource has not be set up yet. We will configure the datasource in the Override JDBC Datasource Parameters lab.
 
 
 ### You are now ready to move to the next lab - [Lab 7: Scaling WebLogic Cluster](scale.weblogic.md) ###

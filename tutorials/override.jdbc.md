@@ -13,6 +13,15 @@ Overrides leverage a built-in WebLogic feature called "Configuration Overriding"
 
 For more details see the [Configuration overrides documentation](https://github.com/oracle/weblogic-kubernetes-operator/blob/2.0/site/config-overrides.md)
 
+## Prerequisites ##
+
+To override a JDBC resource you will require an accessible database instance. This will be created by the instructor and populated it with data. The instructor will provide you with the following configuration details to be used in creating a Kubernetes secret:
+
+- Database Username
+- Database User password
+- JDBC URL for connection
+
+
 ## Prepare JDBC override ##
 
 The operator requires a different file name format for override templates. For JDBC it has to be `jdbc-MODULENAME.xml`. A MODULENAME must correspond to the MBean name of a system resource defined in your original `config.xml` file.
@@ -94,11 +103,20 @@ Events:  <none>
 
 The last thing what you need to create the secret which contains the values of the JDBC user name and URL parameters.
 To create secret execute the following `kubectl` command:
-```
-kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=scott2 --from-literal=url=jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB
-kubectl -n sample-domain1-ns label secret dbsecret weblogic.domainUID=sample-domain1
-```
-Please note values (*username=scott2*, *url=jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB*) and the name of the secret which is: *dbsecret*.
+
+    kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=<DB Username> --from-literal=password=<DB Password> --from-literal=url=<JDBC URL>
+
+Substitute the DB username, password and JDBC URL provided by your instructor.
+
+For example:
+
+    kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=WLSOPR --from-literal=password='Wel2019-Come1#' --from-literal=url=jdbc:oracle:thin:@db.wlsopr.orcl.cloud:1521/wls_pdb1.subXXXXXXX.mydbswlsmydbswl.oraclevcn.com
+
+Now create a label for your secret.
+
+    kubectl -n sample-domain1-ns label secret dbsecret weblogic.domainUID=sample-domain1
+
+Please note values, for example (*username=WLSOPR*, *password='Wel2019-Come1#'*, *url=jdbc:oracle:thin:@db.wlsopr.orcl.cloud:1521/wls_pdb1.subXXXXXXX.mydbswlsmydbswl.oraclevcn.com*) and the name of the secret which is: *dbsecret*.
 
 Before applying changes check the current JDBC parameters using the demo Web Application. Open using the following URL pattern:
 
@@ -110,7 +128,7 @@ Note the value of the Database User and the Database URL.
 
 The final step is to modify the domain resource definition (*domain.yaml*) to include override configuration map and secret.
 
-Open the *domain.yaml* and in the `spec:` section add (or append) the following entries. Be careful to keep the indentation properly:
+Open the *domain.yaml* and in the `spec:` section add (or append) the following entries. Or you may uncomment these entries at the end of the file. Be careful to keep the indentation properly:
 ```
 spec:
   [ ... ]
@@ -163,8 +181,8 @@ Now check the expected values of the JDBC datasource using the demo Web Applicat
 ![](images/override/updated.jdbc.properties.png)
 
 You have to see the following changes:
-- **Database User**: scott2
-- **Database URL**: jdbc:oracle:thin:@test.db.example.com:1521/ORCLCDB
+- **Database User**: Your database user
+- **Database URL**: Your JDBC URL connection string
 
 
 ### You are now ready to move to the next lab - [Lab 9: Updating deployed application by rolling restart to the new image](update.application_short.md) ###

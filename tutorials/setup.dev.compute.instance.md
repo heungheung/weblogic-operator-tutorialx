@@ -100,6 +100,6 @@ Once you have connected to the compute VM run a single remote script to setup th
 bash <(curl -s https://gitlab.com/heungheung/wlsoprvm/-/raw/master/setup-operator-workshop.sh)
 ```
 
-When the script finished your compute VM is ready to use for the workshop.
+When the script finished running, your compute VM is ready to use for the workshop.
 
 ### You are now ready to move to the next lab - [Lab 3: Setup Kubernetes Command-Line Tool **kubectl**](setup.kubectl.md)
