@@ -1,10 +1,11 @@
 
---Prepare database with LOYALTY schema and table before start of lab
+--Prepare database with LOYALTY schema and table before start of Lab
 
 
 --Create the user LOYALTY with a valid password using SQLPlus or SQLDeveloper
 
 DROP USER loyalty cascade;
+
 CREATE USER loyalty IDENTIFIED BY "Welcome_123456";
 GRANT CREATE SESSION TO loyalty;
 GRANT ALL PRIVILEGES TO loyalty;
