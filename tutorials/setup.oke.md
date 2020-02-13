@@ -77,6 +77,16 @@ A service policy allows OKE to create resources in tenancy such as compute. An O
 
 Optionally create more resource policies if you want to regulate which groups can access different parts of the OKE service.
 
+---
+
+**Note**: A service policy for OKE is a global policy that applies to a tenancy. You **MAY NOT** need to create this if:
+
+  - you are using your **Corporate UC account**, this service policy will be created for you. **You DO NOT need to create this policy. Please go to the next section to Create OKE Cluster**.
+  - otherwise, if you are using a **Trial Account** then you will need to create this service policy as this will NOT be created for you. **Please complete this section first**.
+
+---
+
+
 Open the navigation menu. Under **Identity**, click **Policies**.
 
 ![alt text](images/oke/004.oci.console.png)
