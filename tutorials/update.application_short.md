@@ -8,7 +8,7 @@ For the purpose of this lab we created another image that contains domain and up
 
 Go and edit  your domain resource definition (*domain.yaml*) file and modify the image location. So the modifed line with image should look like
 ```
-  image: "iad.ocir.io/weblogick8s/weblogic-operator-tutorial-store:2.0"
+  image: "image: "iad.ocir.io/apaccpt01/wlsopr:green""
 ```
 
 Don't forget the leading spaces to keep the proper indentation.
