@@ -91,6 +91,7 @@ jdbc-testDatasource.xml:
           <value f:combine-mode="replace">${secret:dbsecret.username}</value>
        </property>
     </properties>
+    <password-encrypted f:combine-mode="replace">${secret:dbsecret.password:encrypt}</password-encrypted>
   </jdbc-driver-params>
 </jdbc-data-source>
 
