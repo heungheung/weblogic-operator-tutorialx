@@ -2,7 +2,7 @@
 
 This tutorial implements the Docker image with the WebLogic domain inside the image deployment. This means all the artefacts including the deployed applications, domain related files are stored within the image. This results new WebLogic Docker image every time when the application modified. In this - widely adopted - approach the image is the packaging unit instead of the Web/Enterprise Application Archive (*war*, *ear*).
 
-For the purpose of this lab we created another image that contains domain and updated version of the application (green title on the main page). This image is available at iad.ocir.io/weblogick8s/weblogic-operator-tutorial-store:2.0
+For the purpose of this lab we created another image that contains domain and updated version of the application (green title on the main page). This image is available at image: "iad.ocir.io/apaccpt01/wlsopr:green"
 
 ## Modify the domain.yaml ##
 
