@@ -9,13 +9,13 @@ export CURRENTDIR=$PWD
 export GIT_URL="https://github.com/oracle/weblogic-kubernetes-operator.git"
 export BRANCH="2.0"
 export GITLOCALFOLDER="weblogic-kubernetes-operator"
-export CONTENT_DIR="~/content/"
+export CONTENT_DIR="content/"
 
 mkdir -p $CONTENT_DIR/$GITLOCALFOLDER
 
 #clean, if script runs more
 rm -rf $CONTENT_DIR/$GITLOCALFOLDER
-rm -rf  ~/weblogic-output-directory/*
+rm -rf  weblogic-output-directory/*
 
 cd $CONTENT_DIR
 
