@@ -21,11 +21,12 @@ import="javax.naming.*"
 <!DOCTYPE html>
 <html>
 <body>
-    <h1>WebLogic Operator Demo App - MBean properties:</h1><br>
-
 <!--
-		<h1><font color="green">WebLogic Operator Demo App - MBean properties:</font></h1><br>
+    <h1>WebLogic Operator Demo App - MBean properties:</h1><br>
 -->
+
+    <h1><font color="green">WebLogic Operator Demo App - MBean properties:</font></h1><br>
+
 
     <%
       // database connections variables
