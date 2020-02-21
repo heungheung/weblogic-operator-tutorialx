@@ -5,16 +5,11 @@
 
 echo "Clone WebLogic Kubernetes Operator repository..."
 
-# temp solution for OCI instance
-# sudo mkdir /u01
-# sudo chown opc /u01
-
 export CURRENTDIR=$PWD
 export GIT_URL="https://github.com/oracle/weblogic-kubernetes-operator.git"
 export BRANCH="2.0"
 export GITLOCALFOLDER="weblogic-kubernetes-operator"
 export CONTENT_DIR="~/content/"
-
 
 mkdir -p $CONTENT_DIR/$GITLOCALFOLDER
 
