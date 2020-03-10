@@ -131,7 +131,7 @@ Specify the following configuration details on Cluster Creation page:
 
 - **Name**: The name of the cluster. Leave the default value.
 - **Compartment**: The name of your compartment. Leave the default value.
-- **Kubernetes version**: The version of the Kubernetes. Leave the default value.
+- **Kubernetes version**: The version of the Kubernetes. Leave the default value v1.15.7 or v1.14.8. **DO NOT** select v1.16 if available.
 - **Choose Visibility Type**: Is the cluster going to be routable or not. Leave the default value.
 - **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by Container Engine for Kubernetes. Select the available VM.Standard2.1
 - **Number of nodes**: The number of worker nodes to create. Leave the default value 3
