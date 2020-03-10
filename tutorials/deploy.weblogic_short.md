@@ -72,6 +72,55 @@ sample-domain1-managed-server2   0/1       Running   0          1m        10.244
 ```
 You have to see three running pods similar to the result above. If you don't see all the running pods please wait and check periodically. The whole domain deployment may take up to 2-3 minutes depending on the compute shapes.
 
+
+---
+
+**Note**: If you do not see the three running pods similar to the result above and instead you see a `DeadlineExceeded` status for the pod that is running your deployment job similar to below then your deployment job is probably stuck.
+
+```
+$ kubectl get po -n sample-domain1-ns -o wide -w
+NAME                                         READY   STATUS              RESTARTS   AGE   IP       NODE        NOMINATED NODE   READINESS GATES
+sample-domain1-introspect-domain-job-lnfz7   0/1     ContainerCreating   0          17s   <none>   10.0.10.2   <none>           <none>
+sample-domain1-introspect-domain-job-lnfz7   0/1     DeadlineExceeded    0          70s   10.244.1.4   10.0.10.2   <none>           <none>
+```
+
+To resolve this, you will first need to undo the deployment by running:
+
+```
+$ kubectl delete -f ~/content/domain.yaml
+domain.weblogic.oracle "sample-domain1" deleted
+```
+Then, delete the stuck the pod that is running your stuck deployment job.  
+
+```
+$ kubectl delete --all pods --namespace sample-domain1-ns
+pod "sample-domain1-introspect-domain-job-lnfz7" deleted
+```
+
+Check if the stuck job is still running by running:
+
+```
+$ kubectl get pod -n sample-domain1-ns
+No resources found.
+```
+
+You can now retry the deployment again by running:
+
+```
+kubectl apply -f ~/content/domain.yaml
+```
+
+And follow its progress.
+
+```
+kubectl get po -n sample-domain1-ns -o wide -w
+```
+
+**End of Note**
+
+---
+
+
 In order to access any application or admin console deployed on WebLogic you have to configure *Traefik* ingress. OCI Load balancer is already assigned during *Traefik* install in the previous step.
 
 As a simple solution the best is to configure path routing which will route the external traffic through *Traefik* to domain cluster address or admin server's console.
