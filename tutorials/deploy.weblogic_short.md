@@ -90,7 +90,7 @@ To resolve this, you will first need to undo the deployment by running:
 $ kubectl delete -f ~/content/domain.yaml
 domain.weblogic.oracle "sample-domain1" deleted
 ```
-Then, delete the stuck the pod that is running your stuck deployment job.  
+Then, delete the stuck pod that is running your stuck deployment job.  
 
 ```
 $ kubectl delete --all pods --namespace sample-domain1-ns
