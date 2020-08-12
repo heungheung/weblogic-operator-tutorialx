@@ -75,6 +75,57 @@ create('user','Property')
 cd('Property/user')
 set('Value', dsusername)
 
+# modify by kenneth - added properties for ATP
+cd('..')
+create('oracle.net.tns_admin','Property')
+cd('Property/oracle.net.tns_admin')
+set('Value','/db-demo/creds')
+#
+cd('..')
+create('oracle.net.ssl_version','Property')
+cd('Property/oracle.net.ssl_version')
+set('Value','1.2')
+#
+cd('..')
+create('javax.net.ssl.trustStore','Property')
+cd('Property/javax.net.ssl.trustStore')
+set('Value','/db-demo/creds/truststore.jks')
+#
+cd('..')
+create('oracle.net.ssl_server_dn_match','Property')
+cd('Property/oracle.net.ssl_server_dn_match')
+set('Value','true')
+#
+cd('..')
+create('javax.net.ssl.keyStoreType','Property')
+cd('Property/javax.net.ssl.keyStoreType')
+set('Value','JKS')
+#
+cd('..')
+create('javax.net.ssl.trustStoreType','Property')
+cd('Property/javax.net.ssl.trustStoreType')
+set('Value','JKS')
+#
+cd('..')
+create('javax.net.ssl.keyStore','Property')
+cd('Property/javax.net.ssl.keyStore')
+set('Value','/db-demo/creds/keystore.jks')
+#
+cd('..')
+create('javax.net.ssl.keyStorePassword','Property')
+cd('Property/javax.net.ssl.keyStorePassword')
+set('Value','Oracle1234567')
+#
+cd('..')
+create('javax.net.ssl.trustStorePassword','Property')
+cd('Property/javax.net.ssl.trustStorePassword')
+set('Value','Oracle1234567')
+#
+cd('..')
+create('oracle.jdbc.fanEnabled','Property')
+cd('Property/oracle.jdbc.fanEnabled')
+set('Value','false')
+
 print 'create JDBCConnectionPoolParams'
 cd('/JDBCSystemResource/' + dsname + '/JdbcResource/' + dsname)
 create('myJdbcConnectionPoolParams','JDBCConnectionPoolParams')
