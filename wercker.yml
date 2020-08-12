@@ -37,4 +37,4 @@ build-domain-in-home-image:
         code: |
               docker login $REGION.ocir.io -u $TENANCY/$OCI_REGISTRY_USERNAME -p $OCI_REGISTRY_PASSWORD
               docker push $REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:$WERCKER_GIT_COMMIT
-              docker push $REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:latest
+              docker push $REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:atp.black
